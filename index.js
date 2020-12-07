@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const megadb = require('megadb')
 //Otros npm que vayas a instalar...
 
+const { prefix } = require('./config.json');
+
 const client = new Discord.Client();
 
 client.once('ready', () => {
