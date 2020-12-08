@@ -258,7 +258,7 @@ const embed = new Discord.MessageEmbed()
 
 .setAuthor('Creador:  Cris El Pro')
 .setTitle(':exclamation: | Comandos')
-.setDescription('Mira mis comandos, y si no están todos pon el help y el módulo con un número después, ejemplo:  `r!ayuda Juegos 2`')
+.setDescription('Con los siguientes códigos accederás a la información de mis preciosos comandos')
 .addField(':video_game: | Comandos de juegos', 'Para ver los comandos usa `r!ayuda Juegos`')
 .addField(':grey_question: | Ayuda', 'Para ver los comandos usa r!Ayuda')
 .addField(':wink: | Interacción', 'Para ver los comandos usa `r!ayuda Interacción`')
@@ -277,7 +277,7 @@ if (message.content.startsWith(prefix + 'ayuda Juegos')) {
 
 const embed = new Discord.MessageEmbed()
 
-.setAuthor('Página 1/1 (5/5 comandos)')
+.setAuthor('Página Juegos (5 comandos)')
 .setTitle('Juegos')
 .setDescription('Comandos de Juegos')
 .setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
@@ -301,7 +301,7 @@ if(message.content.startsWith(prefix + 'Ayuda')) {
 
 const embed = new Discord.MessageEmbed()
 
-.setAuthor('Página 1/1 (3/3 comandos)')
+.setAuthor('Página Ayuda (3 comandos)')
 .setTitle('Ayuda')
 .setDescription('Comandos de ayuda')
 .setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
@@ -323,7 +323,7 @@ if(msg.content.startsWith(prefix + 'ayuda Interacción')) {
 
 const embed = new Discord.MessageEmbed()
 
-.setAuthor('Página 1/2 (8/10 comandos)')
+.setAuthor('Página Interacción (10 comandos)')
 .setTitle('Interacción')
 .setDescription('Comandos de Interacción')
 .setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
@@ -336,6 +336,8 @@ const embed = new Discord.MessageEmbed()
 .addField('r!sorprendido', 'Te hace expresar tu estado de sorpresa con GIFS')
 .addField('r!asustado', 'Te hace expresar tu miedo con GIFS')
 .addField('r!control <usuario>', 'Te hace controlar a algún usuario mediante la música')
+.addField('r!celebrar', 'Te da GIFS de celebración si es que ganaste algo o si solo quieres celebrar')
+.addField('r!bailar', 'Te da GIFS de bailes increíbles')
 .setColor('#936841')
 .setFooter('Rigby Bot')
 
@@ -367,7 +369,7 @@ if(msg.content.startsWith(prefix + 'ayuda Mensajes')) {
 
 const embed = new Discord.MessageEmbed()
 
-.setAuthor('Página 1/1 (3/3 comandos)')
+.setAuthor('Página Mensajes (3 comandos)')
 .setTitle('Mensajes')
 .setDescription('Aquí aparece la información de los comados que te envían mensajes')
 .setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
