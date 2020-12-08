@@ -346,7 +346,7 @@ msg.channel.send(embed);
 
 client.on('message', msg => {
 if(msg.author.bot) return;
-if(msg.content.startsWith(prefix + 'Interacción 2')) {
+if(msg.content.startsWith(prefix + 'ayuda Interacción 2')) {
   const embed = new Discord.MessageEmbed()
 
   .setAuthor('Página 2/2 (10/10 comandos)')
