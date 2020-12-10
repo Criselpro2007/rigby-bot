@@ -15,7 +15,7 @@ client.once('ready', () => {
     let prefix = process.env.prefix;
     client.user.setActivity(". . .", { type: "PLAYING" }); //Un interval de reinicio de bot.
         setInterval(function () { //La función interval.
-          let statuses = [`Videojuegos con Mordecai | r!help`, `Robar los regalos de Navidad | r!help`, `Espiar con mi capa de invisibilidad | r!help`, `Volar en mi patineta futuristica | r!help`, `Usa el comando r!help para ver mis comandos | r!invite`]; //El array de Status
+          let statuses = [`Videojuegos con Mordecai | r!help`, `Espiar con mi capa de invisibilidad | r!help`, `Volar en mi patineta futuristica | r!help`, `versión ` + Discord.version]; //El array de Status
           let status = Math.floor(Math.random() * statuses.length); //Un math random del array.
           client.user.setPresence({ //La presencia.
             activity: { //Actividad
