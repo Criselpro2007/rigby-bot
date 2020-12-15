@@ -153,7 +153,7 @@ if (msg.content.startsWith(prefix + "dado")) {
     ':game_die: | Sacaste un :three: es la mitad de lo máximo que puedes sacar, no está ni bien ni mal',
     ':game_die: | Sacaste un :four: es muy bueno mi amigo',
     ':game_die: | Sacaste un :five: casi consigues el máximo',
-    ':game_die: | Sacaste un :six: es lo máximo, celebra viejo <a:sp_si:785362808275337246>',
+    ':game_die: | Sacaste un :six: es lo máximo, celebra viejo <a:sp_si:785362808275337246:>',
     
   ];
   
