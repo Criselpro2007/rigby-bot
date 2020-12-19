@@ -319,7 +319,6 @@ message.channel.send(embed);
 //Help Interacción
 client.on('message', msg => {
 if(msg.author.bot) return;
-if(msg.content.startsWith(prefix + 'ayuda Interacción 2')) return;
 if(msg.content.startsWith(prefix + 'ayuda Interacción')) {
 
 const embed = new Discord.MessageEmbed()
@@ -337,25 +336,6 @@ const embed = new Discord.MessageEmbed()
 .addField('r!sorprendido', 'Te hace expresar tu estado de sorpresa con GIFS')
 .addField('r!asustado', 'Te hace expresar tu miedo con GIFS')
 .addField('r!control <usuario>', 'Te hace controlar a algún usuario mediante la música')
-.setColor('#936841')
-.setFooter('Rigby Bot')
-
-msg.channel.send(embed);
-
-}
-});
-
-//Help Interacción 2
-client.on('messsage' , msg => {
-  if(msg.author.bot) return;
-  if(msg.content.startsWith(prefix + 'Interacción 2')) {
-
-    const embed = new Discord.MessageEmbed()
-
-.setAuthor('Página Interacción (10 comandos)')
-.setTitle('Interacción')
-.setDescription('Comandos de Interacción')
-.setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
 .addField('r!celebrar', 'Te da GIFS de celebración si es que ganaste algo o si solo quieres celebrar')
 .addField('r!bailar', 'Te da GIFS de bailes increíbles')
 .setColor('#936841')
