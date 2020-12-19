@@ -319,7 +319,7 @@ message.channel.send(embed);
 //Help Interacción
 client.on('message', msg => {
 if(msg.author.bot) return;
-if(msg.content.startsWith(prefix + 'ayuda interacción 2')) return;
+if(msg.content.startsWith(prefix + 'ayuda Interacción 2')) return;
 if(msg.content.startsWith(prefix + 'ayuda Interacción')) {
 
 const embed = new Discord.MessageEmbed()
