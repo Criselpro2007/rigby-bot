@@ -53,7 +53,7 @@ const kembed = new Discord.MessageEmbed()
   .addField('Moderador', message.author.username)
   kuser.send(`Has sido kickeado de el server ${guild.name} :sob:`)
   message.guild.member(kuser).kick(kreason).reason
-  message.channel.send(kembed)
+  message.channel.send({kembed})
 
 }
   
