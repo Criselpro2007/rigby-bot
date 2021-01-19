@@ -30,6 +30,11 @@ client.once('ready', () => {
 
 //Aquí irán tus scripts
 
+client.login(process.env.token);
+
+///////JUEGOS///////
+
+///////PIEDRA, PAPEL O TIJERA///////
 client.on("message", message => {
   if(message.author.bot) return;
   let msg = message.content.toLowerCase();
@@ -58,13 +63,6 @@ const embed = new Discord.MessageEmbed()
 }
   
 });
-
-client.login(process.env.token);
-
-///////JUEGOS///////
-
-///////PIEDRA, PAPEL O TIJERA///////
-
 ///PIEDRA///
 client.on("message", msg => {
     if (msg.author.bot) return;
