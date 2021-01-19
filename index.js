@@ -37,12 +37,7 @@ client.login(process.env.token);
 ///////PIEDRA, PAPEL O TIJERA///////
 client.on("message", message => {
   if(message.author.bot) return;
-  let msg = message.content.toLowerCase();
-  let args = message.content.slice(prefix.length).trim().split(' ');
-  let command = args.shift().toLowerCase();
-  if(!messsage.content.startsWith(prefix)) return;
-
-if(command === "kick") {
+  if(message.content.startsWith(prefix + 'kick')) {
 let kuser = message.mentions.users.first();
 let kreason = args.join(" ");
 if(!kuser) return message.channel.send("Menciona a alguien para banear")
@@ -61,7 +56,6 @@ const embed = new Discord.MessageEmbed()
   message.channel.send(embed)
 
 }
-  
 });
 ///PIEDRA///
 client.on("message", msg => {
