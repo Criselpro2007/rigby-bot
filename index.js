@@ -36,14 +36,14 @@ client.login(process.env.token);
 
 ///////PIEDRA, PAPEL O TIJERA///////
 client.on("message", message => {
-  if(message.author.bot) return;
+  if(message.author.bot) return;let kuser = message.mentions.users.first();
+  let kreason = args.join(" ");
+  if(!kuser) return message.channel.send("Menciona a alguien para banear")
+  if(!kreason) return message.channel.send("Dime la razón para banear a este pobre, pobre usuario")
+  if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("No eres admin, fuera de aquí :sunglasses:")
+  let guild = message.guild;
   if(message.content.startsWith(prefix + 'kick')) {
-let kuser = message.mentions.users.first();
-let kreason = args.join(" ");
-if(!kuser) return message.channel.send("Menciona a alguien para banear")
-if(!kreason) return message.channel.send("Dime la razón para banear a este pobre, pobre usuario")
-if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("No eres admin, fuera de aquí :sunglasses:")
-let guild = message.guild;
+
 
 const embed = new Discord.MessageEmbed()
   .setThumbnail(kuser.avatarURL)
