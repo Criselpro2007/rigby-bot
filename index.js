@@ -30,6 +30,35 @@ client.once('ready', () => {
 
 //Aquí irán tus scripts
 
+client.on("message", (message) => {
+  if(message.author.bot) return;
+  let msg = message.content.toLowerCase();
+  let args = message.content.slice(prefix.length).trim().split(' ');
+  let command = args.shift().toLowerCase();
+  if(!messsage.content.startsWith(prefix)) return;
+
+if(command === "kick") {
+let kuser = message.mentions.users.first();
+let kreason = args.join(" ");
+if(!kuser) return message.channel.send('Menciona a alguien para banear')
+if(!kreason) return message.channel.send('Dime la razón para banear a este pobre, pobre usuario')
+if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("No eres admin, fuera de aquí :sunglasses:")
+let guild = message.guild;
+
+const kembed = new Discord.MessageEmbed()
+  .setThumbnail(kuser.avatarURL)
+  .addField('Usuario Kickeado :thumbsup:')
+  .addField('Razón', kreason)
+  .addField('ID', kuser.id)
+  .addField('Moderador', message.author.username)
+  kuser.send(`Has sido kickeado de el server ${guild.name} :sob:`)
+  message.guild.member(kuser).kick(kreason).reason
+  message.channel.send(kembed)
+
+}
+  
+});
+
 client.login(process.env.token);
 
 ///////JUEGOS///////
