@@ -40,17 +40,17 @@ client.on("message", message => {
 if(command === "kick") {
 let kuser = message.mentions.users.first();
 let kreason = args.join(" ");
-if(!kuser) return message.channel.send('Menciona a alguien para banear')
-if(!kreason) return message.channel.send('Dime la razón para banear a este pobre, pobre usuario')
+if(!kuser) return message.channel.send("Menciona a alguien para banear")
+if(!kreason) return message.channel.send("Dime la razón para banear a este pobre, pobre usuario")
 if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("No eres admin, fuera de aquí :sunglasses:")
 let guild = message.guild;
 
 const embed = new Discord.MessageEmbed()
   .setThumbnail(kuser.avatarURL)
-  .addField('Usuario Kickeado :thumbsup:')
-  .addField('Razón', kreason)
-  .addField('ID', kuser.id)
-  .addField('Moderador', message.author.username)
+  .addField("Usuario Kickeado :thumbsup:")
+  .addField("Razón", kreason)
+  .addField("ID", kuser.id)
+  .addField("Moderador", message.author.username)
   kuser.send(`Has sido kickeado de el server ${guild.name} :sob:`)
   message.guild.member(kuser).kick(kreason).reason
   message.channel.send(embed)
