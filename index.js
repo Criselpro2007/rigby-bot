@@ -30,7 +30,7 @@ client.once('ready', () => {
 
 //Aquí irán tus scripts
 
-client.on("message", (message) => {
+client.on("message", message => {
   if(message.author.bot) return;
   let msg = message.content.toLowerCase();
   let args = message.content.slice(prefix.length).trim().split(' ');
