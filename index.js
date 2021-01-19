@@ -45,7 +45,7 @@ if(!kreason) return message.channel.send('Dime la razón para banear a este pobr
 if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("No eres admin, fuera de aquí :sunglasses:")
 let guild = message.guild;
 
-const kembed = new Discord.MessageEmbed()
+const embed = new Discord.MessageEmbed()
   .setThumbnail(kuser.avatarURL)
   .addField('Usuario Kickeado :thumbsup:')
   .addField('Razón', kreason)
@@ -53,7 +53,7 @@ const kembed = new Discord.MessageEmbed()
   .addField('Moderador', message.author.username)
   kuser.send(`Has sido kickeado de el server ${guild.name} :sob:`)
   message.guild.member(kuser).kick(kreason).reason
-  message.channel.send({kembed})
+  message.channel.send(embed)
 
 }
   
