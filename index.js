@@ -15,7 +15,7 @@ client.once('ready', () => {
     let prefix = process.env.prefix;
     client.user.setActivity(". . .", { type: "PLAYING" }); //Un interval de reinicio de bot.
         setInterval(function () { //La función interval.
-          let statuses = [`Videojuegos con Mordecai | r!help`, `Espiar con mi capa de invisibilidad | r!help`]; //El array de Status
+          let statuses = [`Videojuegos con Mordecai | r!help`, `Bebiendo soda en Verano | r!help`, `Usar el aire acondicionado a -1°C | r!help`]; //El array de Status
           let status = Math.floor(Math.random() * statuses.length); //Un math random del array.
           client.user.setPresence({ //La presencia.
             activity: { //Actividad
