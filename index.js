@@ -240,7 +240,7 @@ if (msg.content.startsWith(prefix + 'help')) {
   .setDescription('Aquí te muestro con lo máximo con lo que te puedo ayudar')
   .addField(':bust_in_silhouette: | Servidor de soporte', '[Click aquí para entrar](https://discord.gg/8Y7NJvV)')
   .addField(':earth_americas: | Servidor de mi creador', '[Click aquí para entrar](https://discord.gg/3uC72ra)')
-  .addField(':exclamation: | Commandos', 'Usa el comando `r!comandos`')
+  .addField(':exclamation: | Comandos', 'Usa el comando `r!comandos`')
   .addField(':envelope_with_arrow: | Invítame a tu server', 'Usa el comando `r!invite`')
   .setColor('#00ffe9')
   .setFooter('Rigby Bot')
