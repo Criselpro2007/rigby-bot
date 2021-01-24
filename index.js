@@ -443,6 +443,7 @@ client.on("message", message => {
   const command = args.shift().toLowerCase();
 
   if(message.content.startsWith(prefix)) {
+    //Ban
 if (command === 'ban') {
 
   if (!message.guild.me.permissions.has('BAN_MEMBERS')) {
@@ -479,7 +480,24 @@ if (command === 'ban') {
               message.channel.send(`Listo, **${persona.user.tag}** ha sido baneado`)
               return
             })
-          }
+//Kick
+    }else if (command === 'kick') {
+
+      let user = message.mentions.users.first();
+    let razon = args.slice(1).join(' ');
+
+    var perms = message.member.hasPermission("KICK_MEMBERS");
+
+  if(!perms) return message.channel.send("`Error` `|` No tienes permiso para usar este comando.");
+  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a alguien.').catch(console.error);
+
+  if (!razon) return message.channel.send('Escribe una razón, `r!kick @username [razón]`');
+  if (!message.guild.member(user).kickable) return message.reply('No puedo kickear al usuario mencionado.');
+        
+  message.guild.member(user).kick(razon);
+  message.channel.send(`**${user.username}**, fue kickeado del servidor, razón: ${razon}.`);
+  return
+    }
     }
 });
 
