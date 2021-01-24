@@ -476,7 +476,7 @@ if (command === 'ban') {
           })
             .catch(e => message.reply('Ocurrio un **error** desconocido'))
             .then(() => {
-              message.channel.send(`<:Darwin_ban:802946612451868692> | Listo, **${persona.user.tag}** ha sido baneado`)
+              message.channel.send(`Listo, **${persona.user.tag}** ha sido baneado`)
               return
             })
           }
