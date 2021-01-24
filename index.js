@@ -489,7 +489,7 @@ if (command === 'ban') {
     var perms = message.member.hasPermission("KICK_MEMBERS");
 
   if(!perms) return message.channel.send("`Error` `|` No tienes permiso para usar este comando.");
-  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a alguien.').catch(console.error);
+  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a alguien.');
 
   if (!razon) return message.channel.send('Escribe una razón, `r!kick @username [razón]`');
   if (!message.guild.member(user).kickable) return message.reply('No puedo kickear al usuario mencionado.');
