@@ -458,7 +458,7 @@ if (command === 'ban') {
             message.guild.members.resolve(args[0])
           
           if (!persona) {
-            return message.channel.send('Debes mencionar a alguien para banear')
+            return message.reply('Debes mencionar a alguien para banear')
           } else if(!persona.bannable){
             return message.channel.send('No puedo banear a esta persona')
           }else if (persona.roles.highest.comparePositionTo(message.member.roles.highest) > 0) {
