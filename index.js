@@ -30,8 +30,6 @@ client.once('ready', () => {
 
 //Aquí irán tus scripts
 
-client.login(process.env.token);
-
 ///////JUEGOS///////
 
 ///////PIEDRA, PAPEL O TIJERA///////
@@ -437,6 +435,52 @@ const embed = new Discord.MessageEmbed()
 
 message.channel.send(embed); 
 }
+});
+
+///////MODERACIÓN
+client.on("message", message => {
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+
+  if(message.content.startsWith(prefix)) {
+if (command === 'ban') {
+
+  if (!message.guild.me.permissions.has('BAN_MEMBERS')) {
+            return message.channel.send('No tengo permisos para banear gente')
+          }
+          
+          if (!message.member.permissions.has('BAN_MEMBERS')) {
+            return message.channel.send('No puedes banear gente')
+          }
+          
+          let persona = message.mentions.members.first() || 
+            message.guild.members.resolve(args[0])
+          
+          if (!persona) {
+            return message.channel.send('Debes mencionar a alguien para banear')
+          } else if(!persona.bannable){
+            return message.channel.send('No puedo banear a esta persona')
+          }else if (persona.roles.highest.comparePositionTo(message.member.roles.highest) > 0) {
+            return message.channel.send('Esta persona esta en el mismo o mayor rol o nivel que tú, no puedes banearlo')
+          }
+          
+          var razon = args.slice(1).join(' ')
+          if (!razon) {
+            razon = 'Razon no especificada'
+          }
+          
+          razon += `, Baneado por ${message.author.tag}`
+          
+          message.guild.members.ban(persona, {
+            reason: razon
+          })
+            .catch(e => message.reply('Ocurrio un **error** desconocido'))
+            .then(() => {
+              message.channel.send(`<:Darwin_ban:802946612451868692> | Listo, **${persona.user.tag}** ha sido baneado`)
+              return
+            })
+          }
+    }
 });
 
 ///////INTERACCIÓN///////
@@ -909,3 +953,5 @@ msg.channel.send(embed);
 
 }
 });
+
+client.login(process.env.token);
