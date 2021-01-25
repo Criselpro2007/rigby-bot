@@ -35,9 +35,11 @@ client.once('ready', () => {
 ///////PIEDRA, PAPEL O TIJERA///////
 
 ///PIEDRA///
-client.on("message", msg => {
-    if (msg.author.bot) return;
-    if (msg.content.startsWith(prefix + "piedra")) { 
+client.on("message", async msg => {
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+  if(msg.content.startsWith(prefix)) {
+    if (command === 'piedra') {
       let frase = [
 
         ':newspaper: | Elijo papel, te gané viejo OOoOOoOo',
@@ -54,145 +56,127 @@ client.on("message", msg => {
       .setFooter('Rigby Bot')
 
       msg.channel.send(embed);
-      
-      }
-  });
+      return
 
-///PAPEL///
-client.on("message", msg => {
-    if (msg.author.bot) return;
-    if (msg.content.startsWith(prefix + "papel")) { 
-      let frase = [
+//PAPEL
+      }else if (command === 'papel') {
+        let frase = [
 
-        ':newspaper: | Elijo papel, empate odio cuando eso pasa, en especial cuando pasa 100 veces y un monstruo aparece',
-        ':gem: | Elijo roca, noooo perdí, ya te ganaré a la próxima',
-        ':scissors: | Elijo tijeras, te gané viejo OOoOOoOo',
+          ':newspaper: | Elijo papel, empate odio cuando eso pasa, en especial cuando pasa 100 veces y un monstruo aparece',
+          ':gem: | Elijo roca, noooo perdí, ya te ganaré a la próxima',
+          ':scissors: | Elijo tijeras, te gané viejo OOoOOoOo',
+          
+        ];
         
-      ];
-      
-      const embed = new Discord.MessageEmbed()
-      
-
-      .setDescription(frase[Math.floor(Math.random() * frase.length)])
-      .setColor('RANDOM')
-      .setFooter('Rigby Bot')
-
-      msg.channel.send(embed);
-      
-      }
-  });
-
-///TIJERA///
-client.on("message", msg => {
-    if (msg.author.bot) return;
-    if (msg.content.startsWith(prefix + "tijera")) { 
-      let frase = [
-
-        ':newspaper: | Elijo papel, perdí, ya te ganaré a la próxima',
-        ':gem: | Elijo roca, te gané viejo OOoOOoOo',
-        ':scissors: | Elijo tijeras, empate odio cuando eso pasa, en especial cuando pasa 100 veces y un monstruo aparece',
+        const embed = new Discord.MessageEmbed()
         
-      ];
+  
+        .setDescription(frase[Math.floor(Math.random() * frase.length)])
+        .setColor('RANDOM')
+        .setFooter('Rigby Bot')
+  
+        msg.channel.send(embed);
+      return  
       
-      const embed = new Discord.MessageEmbed()
-      
+//Tijera
+      }if (command === 'tijera') {
+        let frase = [
 
-      .setDescription(frase[Math.floor(Math.random() * frase.length)])
-      .setColor('RANDOM')
-      .setFooter('Rigby Bot')
+          ':newspaper: | Elijo papel, perdí, ya te ganaré a la próxima',
+          ':gem: | Elijo roca, te gané viejo OOoOOoOo',
+          ':scissors: | Elijo tijeras, empate odio cuando eso pasa, en especial cuando pasa 100 veces y un monstruo aparece',
+          
+        ];
+        
+        const embed = new Discord.MessageEmbed()
+        
+  
+        .setDescription(frase[Math.floor(Math.random() * frase.length)])
+        .setColor('RANDOM')
+        .setFooter('Rigby Bot')
+  
+        msg.channel.send(embed);
+        return
 
-      msg.channel.send(embed);
+//Pescar
+      }if (command === 'pescar') {
+        let frase = [
+
+          ':white_check_mark: | Bien hecho, **pescaste** un :athletic_shoe: la gente bota mucha basura',
+          ':x: | Lo lamento pero los **peces se comieron tu carnada**, pero ve el lado positivo, alimentaste a los patitos',
+          ':white_check_mark: | Bien hecho, **pescaste** un :fish: llevatelo a casa y comelo con tu familia o bótalo, a mi me da igual hermano',
+          ':x: | Lo lamento, pero **no pescaste nada**',
+          ':white_check_mark: | Pero que buena suerte, **pescaste un** :gem: ve a comprar la lotería de inmediato',
+          ':x: | Lo lamento si eres menor pero **pescate una botella de champaña** :champagne:',
+          ':white_check_mark: | Bien hecho, **pescaste** una cama grandiosa :bed:',
+          ':x: | O no viejo, **pescaste** una bolsa de compras :shopping_bags:',
+          ':neutral_face: | No es ni bueno ni malo, pero **pescaste un resfriado** jajaja',
+          ':white_check_mark: | Bien hecho, **pescaste un reloj de oro** :hand_splayed::alarm_clock:',
+          ':x: | Empieza a correr, porque **pecaste un tiburón** :shark:',
+          ':white_check_mark: | Que buena suerte amig, **pescaste una consola de videojuagos :video_game: y entonces, ¿puedo ir a tu casa a jugar?',
+          ':x: | Que mal, **pescaste un puerta** :door:',
+          
+        ];
+        
+        const embed = new Discord.MessageEmbed()
+        
       
+        .setDescription(frase[Math.floor(Math.random() * frase.length)])
+        .setColor('RANDOM')
+        .setFooter('Rigby Bot')
+      
+        msg.channel.send(embed);
+        return
+
+//Dado
+      }if (command === 'dado') {
+        let frase = [
+
+          ':game_die: | Sacaste un :one: suerte para la próxima hermano',
+          ':game_die: | Sacaste un :two: no está mal, es un 2, no un :one:',
+          ':game_die: | Sacaste un :three: es la mitad de lo máximo que puedes sacar, no está ni bien ni mal',
+          ':game_die: | Sacaste un :four: es muy bueno mi amigo',
+          ':game_die: | Sacaste un :five: casi consigues el máximo',
+          ':game_die: | Sacaste un :six: es lo máximo, celebra viejo',
+          
+        ];
+        
+        const embed = new Discord.MessageEmbed()
+        
+      
+        .setDescription(frase[Math.floor(Math.random() * frase.length)])
+        .setColor('RANDOM')
+        .setFooter('Rigby Bot')
+      
+        msg.channel.send(embed);
+        return
+
+      }if (command === '8ball') {
+        let frase = [
+
+          ':8ball: | Hoy es tu día de suerte',
+          ':8ball: | Sí',
+          ':8ball: | No',
+          ':8ball: | Tal vez',
+          ':exclamation: | Comprate una bola 8, yo soy un bot amiguito',
+          ':8ball: | Mejor ve con tus amigos',
+          
+        ];
+        
+        const embed = new Discord.MessageEmbed()
+        
+        .setTitle(':8ball: | Bola 8')
+        .setDescription(frase[Math.floor(Math.random() * frase.length)])
+        .setColor('RANDOM')
+        .setFooter('Rigby Bot')
+  
+        msg.channel.send(embed);
+        return
+      }
       }
   });
-
-///////PESCA///////
-client.on("message", msg => {
-if (msg.author.bot) return;
-if (msg.content.startsWith(prefix + 'pescar')) { 
-  let frase = [
-
-    ':white_check_mark: | Bien hecho, **pescaste** un :athletic_shoe: la gente bota mucha basura',
-    ':x: | Lo lamento pero los **peces se comieron tu carnada**, pero ve el lado positivo, alimentaste a los patitos',
-    ':white_check_mark: | Bien hecho, **pescaste** un :fish: llevatelo a casa y comelo con tu familia o bótalo, a mi me da igual hermano',
-    ':x: | Lo lamento, pero **no pescaste nada**',
-    ':white_check_mark: | Pero que buena suerte, **pescaste un** :gem: ve a comprar la lotería de inmediato',
-    ':x: | Lo lamento si eres menor pero **pescate una botella de champaña** :champagne:',
-    ':white_check_mark: | Bien hecho, **pescaste** una cama grandiosa :bed:',
-    ':x: | O no viejo, **pescaste** una bolsa de compras :shopping_bags:',
-    ':neutral_face: | No es ni bueno ni malo, pero **pescaste un resfriado** jajaja',
-    ':white_check_mark: | Bien hecho, **pescaste un reloj de oro** :hand_splayed::alarm_clock:',
-    ':x: | Empieza a correr, porque **pecaste un tiburón** :shark:',
-    ':white_check_mark: | Que buena suerte amig, **pescaste una consola de videojuagos :video_game: y entonces, ¿puedo ir a tu casa a jugar?',
-    ':x: | Que mal, **pescaste un puerta** :door:',
-    
-  ];
-  
-  const embed = new Discord.MessageEmbed()
-  
-
-  .setDescription(frase[Math.floor(Math.random() * frase.length)])
-  .setColor('RANDOM')
-  .setFooter('Rigby Bot')
-
-  msg.channel.send(embed);
-  
-  }
-});
-
-///DADO///
-client.on("message", msg => {
-if (msg.author.bot) return;
-if (msg.content.startsWith(prefix + "dado")) { 
-  let frase = [
-
-    ':game_die: | Sacaste un :one: suerte para la próxima hermano',
-    ':game_die: | Sacaste un :two: no está mal, es un 2, no un :one:',
-    ':game_die: | Sacaste un :three: es la mitad de lo máximo que puedes sacar, no está ni bien ni mal',
-    ':game_die: | Sacaste un :four: es muy bueno mi amigo',
-    ':game_die: | Sacaste un :five: casi consigues el máximo',
-    ':game_die: | Sacaste un :six: es lo máximo, celebra viejo',
-    
-  ];
-  
-  const embed = new Discord.MessageEmbed()
-  
-
-  .setDescription(frase[Math.floor(Math.random() * frase.length)])
-  .setColor('RANDOM')
-  .setFooter('Rigby Bot')
-
-  msg.channel.send(embed);
-  
-  }
-});
 
 //8ball
-client.on("message", msg => {
-    if (msg.author.bot) return;
-    if (msg.content.startsWith(prefix + "8ball")) { 
-      let frase = [
-
-        ':8ball: | Hoy es tu día de suerte',
-        ':8ball: | Sí',
-        ':8ball: | No',
-        ':8ball: | Tal vez',
-        ':exclamation: | Comprate una bola 8, yo soy un bot amiguito',
-        ':8ball: | Mejor ve con tus amigos',
-        
-      ];
-      
-      const embed = new Discord.MessageEmbed()
-      
-      .setTitle(':8ball: | Bola 8')
-      .setDescription(frase[Math.floor(Math.random() * frase.length)])
-      .setColor('RANDOM')
-      .setFooter('Rigby Bot')
-
-      msg.channel.send(embed);
-      
-      }
-  });
 
 //Tragamonedas
 client.on('message', msg => {
