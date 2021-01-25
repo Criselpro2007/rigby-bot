@@ -29,7 +29,7 @@ client.once('ready', () => {
 });
 
 //Aquí irán tus scripts
-
+var help = 'ayuda'
 ///////JUEGOS///////
 
 ///////PIEDRA, PAPEL O TIJERA///////
@@ -254,7 +254,7 @@ client.on("message", async message => {
         return
 
 //Help ayuda
-      }if (command === 'ayuda') {
+      }if (command === help) {
         const embed = new Discord.MessageEmbed()
 
         .setAuthor('Página Ayuda (3 comandos)')
