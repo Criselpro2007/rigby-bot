@@ -35,10 +35,10 @@ client.once('ready', () => {
 ///////PIEDRA, PAPEL O TIJERA///////
 
 ///PIEDRA///
-client.on("message", async msg => {
+client.on("message", async message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-  if(msg.content.startsWith(prefix)) {
+  if(message.content.startsWith(prefix)) {
     if (command === 'piedra') {
       let frase = [
 
@@ -55,7 +55,7 @@ client.on("message", async msg => {
       .setColor('RANDOM')
       .setFooter('Rigby Bot')
 
-      msg.channel.send(embed);
+      message.channel.send(embed);
       return
 
 //PAPEL
@@ -75,7 +75,7 @@ client.on("message", async msg => {
         .setColor('RANDOM')
         .setFooter('Rigby Bot')
   
-        msg.channel.send(embed);
+        message.channel.send(embed);
       return  
       
 //Tijera
@@ -95,7 +95,7 @@ client.on("message", async msg => {
         .setColor('RANDOM')
         .setFooter('Rigby Bot')
   
-        msg.channel.send(embed);
+        message.channel.send(embed);
         return
 
 //Pescar
@@ -125,7 +125,7 @@ client.on("message", async msg => {
         .setColor('RANDOM')
         .setFooter('Rigby Bot')
       
-        msg.channel.send(embed);
+        message.channel.send(embed);
         return
 
 //Dado
@@ -148,9 +148,10 @@ client.on("message", async msg => {
         .setColor('RANDOM')
         .setFooter('Rigby Bot')
       
-        msg.channel.send(embed);
+        message.channel.send(embed);
         return
 
+//8ball
       }if (command === '8ball') {
         let frase = [
 
@@ -170,13 +171,11 @@ client.on("message", async msg => {
         .setColor('RANDOM')
         .setFooter('Rigby Bot')
   
-        msg.channel.send(embed);
+        message.channel.send(embed);
         return
       }
       }
   });
-
-//8ball
 
 //Tragamonedas
 client.on('message', msg => {
