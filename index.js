@@ -173,164 +173,130 @@ client.on("message", async message => {
   
         message.channel.send(embed);
         return
-      }
-      }
-  });
 
 //Tragamonedas
-client.on('message', msg => {
-if(msg.author.bot) return;
-if(msg.content.startsWith(prefix + 'tragamonedas')) {
+      }if (command === 'tragamonedas') {
+        let frase = [
 
-let frase = [
-
-        ':coin: | Sacaste :cherries::cherries::seven: suerte para la próxima',
-        ':coin: | Sacaste :slot_machine: ¡FELICIDADES!',
-        ':coin: | Sacaste :spades::clubs::diamonds: suerte para la próxima',
-        ':coin: | Sacaste :cherries::cherries::cherries: ¡FELICIDADES!',
-        ':coin: | Sacaste :hearts::hearts::spades: suerte para la próxima',
-        ':coin: | Sacaste :hearts::hearts::hearts: ¡FELICIDADES!',
-        ':coin: | Sacaste :100::seven::clubs:',
-        ':coin: | Sacaste :diamonds::diamonds::diamonds: ¡FELICIDADES!',
+          ':coin: | Sacaste :cherries::cherries::seven: suerte para la próxima',
+          ':coin: | Sacaste :slot_machine: ¡FELICIDADES!',
+          ':coin: | Sacaste :spades::clubs::diamonds: suerte para la próxima',
+          ':coin: | Sacaste :cherries::cherries::cherries: ¡FELICIDADES!',
+          ':coin: | Sacaste :hearts::hearts::spades: suerte para la próxima',
+          ':coin: | Sacaste :hearts::hearts::hearts: ¡FELICIDADES!',
+          ':coin: | Sacaste :100::seven::clubs:',
+          ':coin: | Sacaste :diamonds::diamonds::diamonds: ¡FELICIDADES!',
+          
+        ];
         
-      ];
+        const embed = new Discord.MessageEmbed()
+        
+        .setTitle(':slot_machine: | Máquinas tragamonedas')
+        .setDescription(frase[Math.floor(Math.random() * frase.length)])
+        .setColor('RANDOM')
+        .setFooter('Rigby Bot')
+  
+        message.channel.send(embed);
+        return
+
+/////COMANDOS DE AYUDA
+//Help
+      }if (command === 'help'){
+        const embed = new Discord.MessageEmbed()
+
+        .setAuthor('Autor:  Cris El Pro')
+        .setTitle(':grey_question: | Ayuda')
+        .setDescription('Aquí te muestro con lo máximo con lo que te puedo ayudar')
+        .addField(':bust_in_silhouette: | Servidor de soporte', '[Click aquí para entrar](https://discord.gg/8Y7NJvV)')
+        .addField(':earth_americas: | Servidor de mi creador', '[Click aquí para entrar](https://discord.gg/3uC72ra)')
+        .addField(':exclamation: | Comandos', 'Usa el comando `r!comandos`')
+        .addField(':envelope_with_arrow: | Invítame a tu server', 'Usa el comando `r!invite`')
+        .setColor('#00ffe9')
+        .setFooter('Rigby Bot')
       
-      const embed = new Discord.MessageEmbed()
-      
-      .setTitle(':slot_machine: | Máquinas tragamonedas')
-      .setDescription(frase[Math.floor(Math.random() * frase.length)])
-      .setColor('RANDOM')
-      .setFooter('Rigby Bot')
+        message.channel.send(embed);
+        return
 
-      msg.channel.send(embed);
-      
-      }
-  });
+//Comandos
+      }if (command === 'comandos') {
+        const embed = new Discord.MessageEmbed()
 
-///////COMANDOS DE AYUDA///////
-
-///HELP///
-client.on('message', msg => {
-if (msg.author.bot) return;
-if (msg.content.startsWith(prefix + 'help')) {
-
-  const embed = new Discord.MessageEmbed()
-
-  .setAuthor('Autor:  Cris El Pro')
-  .setTitle(':grey_question: | Ayuda')
-  .setDescription('Aquí te muestro con lo máximo con lo que te puedo ayudar')
-  .addField(':bust_in_silhouette: | Servidor de soporte', '[Click aquí para entrar](https://discord.gg/8Y7NJvV)')
-  .addField(':earth_americas: | Servidor de mi creador', '[Click aquí para entrar](https://discord.gg/3uC72ra)')
-  .addField(':exclamation: | Comandos', 'Usa el comando `r!comandos`')
-  .addField(':envelope_with_arrow: | Invítame a tu server', 'Usa el comando `r!invite`')
-  .setColor('#00ffe9')
-  .setFooter('Rigby Bot')
-
-  msg.channel.send(embed);
-}
-});
-
-///COMANDOS///
-client.on('message', msg => {
-if (msg.author.bot) return;
-if (msg.content.startsWith(prefix + 'comandos')) {
-
-const embed = new Discord.MessageEmbed()
-
-.setAuthor('Creador:  Cris El Pro')
-.setTitle(':exclamation: | Comandos')
-.setDescription('Con los siguientes códigos accederás a la información de mis preciosos comandos')
-.addField(':video_game: | Comandos de juegos', 'Para ver los comandos usa `r!ayuda Juegos`')
-.addField(':grey_question: | Ayuda', 'Para ver los comandos usa r!Ayuda')
-.addField(':wink: | Interacción', 'Para ver los comandos usa `r!ayuda Interacción`')
-.addField(':speech_balloon: | Mensajes', 'Para ver los comandos usa `r!ayuda Mensajes`')
-.setColor('RANDOM')
-.setFooter('Rigby Bot')
-
-msg.channel.send(embed);
-}
-});
+        .setAuthor('Creador:  Cris El Pro')
+        .setTitle(':exclamation: | Comandos')
+        .setDescription('Con los siguientes códigos accederás a la información de mis preciosos comandos')
+        .addField(':video_game: | Comandos de juegos', 'Para ver los comandos usa `r!ayuda Juegos`')
+        .addField(':grey_question: | Ayuda', 'Para ver los comandos usa r!Ayuda')
+        .addField(':wink: | Interacción', 'Para ver los comandos usa `r!ayuda Interacción`')
+        .addField(':speech_balloon: | Mensajes', 'Para ver los comandos usa `r!ayuda Mensajes`')
+        .setColor('RANDOM')
+        .setFooter('Rigby Bot')
+        
+        message.channel.send(embed);
+        return
 
 //Help Juegos
-client.on('message', message => {
-if(message.author.bot) return;
-if (message.content.startsWith(prefix + 'ayuda Juegos')) {
+      }if (command === 'ayuda Juegos') {
+        const embed = new Discord.MessageEmbed()
 
-const embed = new Discord.MessageEmbed()
+        .setAuthor('Página Juegos (5 comandos)')
+        .setTitle('Juegos')
+        .setDescription('Comandos de Juegos')
+        .setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
+        .addField('r!ppt', 'Este comando te da la información de como jugar a piedra, papel o tijera con Rigby Bot')
+        .addField('r!pescar', 'Este comando te hace `pescar objetos virtuales`')
+        .addField('r!dado', 'Este comando te da resultados al azar de un dado común')
+        .addField('r!8ball', 'Este comando te da unos resultados parecidos a una bola 8 :8ball:')
+        .addField('r!tragamonedas', 'Este comando te da  resultados parecidos a una máquina tragamonedas')
+        .setColor('#936841')
+        .setFooter('Rigby Bot')
+        
+        message.channel.send(embed);
+        return
 
-.setAuthor('Página Juegos (5 comandos)')
-.setTitle('Juegos')
-.setDescription('Comandos de Juegos')
-.setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
-.addField('r!ppt', 'Este comando te da la información de como jugar a piedra, papel o tijera con Rigby Bot')
-.addField('r!pescar', 'Este comando te hace `pescar objetos virtuales`')
-.addField('r!dado', 'Este comando te da resultados al azar de un dado común')
-.addField('r!8ball', 'Este comando te da unos resultados parecidos a una bola 8 :8ball:')
-.addField('r!tragamonedas', 'Este comando te da  resultados parecidos a una máquina tragamonedas')
-.setColor('#936841')
-.setFooter('Rigby Bot')
+//Help ayuda
+      }if (command === 'ayuda') {
+        const embed = new Discord.MessageEmbed()
 
-message.channel.send(embed);
-
-}
-});
-
-//Help Ayuda
-client.on('message', message => {
-if(message.author.bot) return;
-if(message.content.startsWith(prefix + 'Ayuda')) {
-
-const embed = new Discord.MessageEmbed()
-
-.setAuthor('Página Ayuda (3 comandos)')
-.setTitle('Ayuda')
-.setDescription('Comandos de ayuda')
-.setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
-.addField('r!help o r!ayuda', 'Te muestra en lo máximo que te puede ayudar ese comando')
-.addField('r!invite', 'Te muestra un mensaje donde hay una invitación para invitarme a tu servidor')
-.addField('r!server', 'Te enseña la información de el servidor en el que pongas este comando')
-.setColor('#936841')
-.setFooter('Rigby Bot')
-
-message.channel.send(embed);
-
-}
-});
+        .setAuthor('Página Ayuda (3 comandos)')
+        .setTitle('Ayuda')
+        .setDescription('Comandos de ayuda')
+        .setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
+        .addField('r!help o r!ayuda', 'Te muestra en lo máximo que te puede ayudar ese comando')
+        .addField('r!invite', 'Te muestra un mensaje donde hay una invitación para invitarme a tu servidor')
+        .addField('r!server', 'Te enseña la información de el servidor en el que pongas este comando')
+        .setColor('#936841')
+        .setFooter('Rigby Bot')
+        
+        message.channel.send(embed);
+        return
 
 //Help Interacción
-client.on('message', msg => {
-if(msg.author.bot) return;
-if(msg.content.startsWith(prefix + 'ayuda Interacción')) {
+      }if (command === 'ayuda Interacción') {
+        const embed = new Discord.MessageEmbed()
 
-const embed = new Discord.MessageEmbed()
+        .setAuthor('Página Interacción (10 comandos)')
+        .setTitle('Interacción')
+        .setDescription('Comandos de Interacción')
+        .setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
+        .addField('r!golpe <usuario>', 'Usa este comando para `golpear` a alguien mencionándolo')
+        .addField('r!bloqueo <usuario>', 'Con este comando bloqueas el golpe o golpe mortal de algún usuario')
+        .addField('r!salto', 'Da un salto mortal para escapar o patear a alguien al caer')
+        .addField('r!feliz', 'Esto te hace expresar felicidad con GIFS')
+        .addField('r!triste', 'Te hace expresar tu tristeza con GIFS')
+        .addField('r!enojado', 'Te hace expresar tu  enojo con GIFS')
+        .addField('r!sorprendido', 'Te hace expresar tu estado de sorpresa con GIFS')
+        .addField('r!asustado', 'Te hace expresar tu miedo con GIFS')
+        .addField('r!control <usuario>', 'Te hace controlar a algún usuario mediante la música')
+        .addField('r!celebrar', 'Te da GIFS de celebración si es que ganaste algo o si solo quieres celebrar')
+        .addField('r!bailar', 'Te da GIFS de bailes increíbles')
+        .setColor('#936841')
+        .setFooter('Rigby Bot')
+        
+        message.channel.send(embed);
 
-.setAuthor('Página Interacción (10 comandos)')
-.setTitle('Interacción')
-.setDescription('Comandos de Interacción')
-.setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
-.addField('r!golpe <usuario>', 'Usa este comando para `golpear` a alguien mencionándolo')
-.addField('r!bloqueo <usuario>', 'Con este comando bloqueas el golpe o golpe mortal de algún usuario')
-.addField('r!salto', 'Da un salto mortal para escapar o patear a alguien al caer')
-.addField('r!feliz', 'Esto te hace expresar felicidad con GIFS')
-.addField('r!triste', 'Te hace expresar tu tristeza con GIFS')
-.addField('r!enojado', 'Te hace expresar tu  enojo con GIFS')
-.addField('r!sorprendido', 'Te hace expresar tu estado de sorpresa con GIFS')
-.addField('r!asustado', 'Te hace expresar tu miedo con GIFS')
-.addField('r!control <usuario>', 'Te hace controlar a algún usuario mediante la música')
-.addField('r!celebrar', 'Te da GIFS de celebración si es que ganaste algo o si solo quieres celebrar')
-.addField('r!bailar', 'Te da GIFS de bailes increíbles')
-.setColor('#936841')
-.setFooter('Rigby Bot')
-
-msg.channel.send(embed);
-
-}
-});
-
-client.on('message', msg => {
-if(msg.author.bot) return;
-if(msg.content.startsWith(prefix + 'ayuda Interacción 2')) {
-  const embed = new Discord.MessageEmbed()
+//Help Interacción 2
+      }if (command === 'ayuda Interacción 2') {
+        const embed = new Discord.MessageEmbed()
 
   .setAuthor('Página 2/2 (10/10 comandos)')
   .setTitle('Interacción')
@@ -340,30 +306,29 @@ if(msg.content.startsWith(prefix + 'ayuda Interacción 2')) {
   .addField('r!bailar', 'Te da GIFS de bailes increíbles')
   .setColor('#936841')
   .setFooter('Rigby Bot')
-}
-});
+
+  message.channel.send(embed);
+  return
 
 //Help Mensajes
-client.on('message', msg => {
-if(msg.author.bot) return;
-if(msg.content.startsWith(prefix + 'ayuda Mensajes')) {
+      }if (command === 'ayuda Mensajes') {
+        const embed = new Discord.MessageEmbed()
 
-const embed = new Discord.MessageEmbed()
-
-.setAuthor('Página Mensajes (3 comandos)')
-.setTitle('Mensajes')
-.setDescription('Aquí aparece la información de los comados que te envían mensajes')
-.setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
-.addField('r!say <mensaje>', 'Con este comado el puedes hacer que yo diga lo que quieras')
-.addField('Dime tu prefix', 'Esto te muestra mi prefix')
-.addField('r!redes', 'Te muestra las redes sociales de mi creador')
-.setColor('#936841')
-.setFooter('Rigby Bot')
-
-msg.channel.send(embed);
-
-}
-});
+        .setAuthor('Página Mensajes (3 comandos)')
+        .setTitle('Mensajes')
+        .setDescription('Aquí aparece la información de los comados que te envían mensajes')
+        .setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
+        .addField('r!say <mensaje>', 'Con este comado el puedes hacer que yo diga lo que quieras')
+        .addField('Dime tu prefix', 'Esto te muestra mi prefix')
+        .addField('r!redes', 'Te muestra las redes sociales de mi creador')
+        .setColor('#936841')
+        .setFooter('Rigby Bot')
+        
+        message.channel.send(embed);
+        return
+      }
+      }
+  });
 
 ///PPT///
 client.on('message', msg => {
