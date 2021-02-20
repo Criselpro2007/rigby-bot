@@ -271,7 +271,7 @@ client.on("message", async message => {
         return
 
 //Help Interacción
-      }if (command === 'ayuda Interacción') {
+      }if (command === 'ayuda Interacción 1') {
         const embed = new Discord.MessageEmbed()
 
         .setAuthor('Página Interacción (10 comandos)')
