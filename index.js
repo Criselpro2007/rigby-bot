@@ -885,7 +885,7 @@ if(msg.content.startsWith(prefix + 'say')) {
   msg.delete()
   const args = msg.content.slice(prefix.length).trim().split(/ +/g);
 
-  if(!args) return msg.channel.send(`Debe escribir un mensaje a enviar.`);
+  if(!args) return msg.channel.send(`Debes escribir un mensaje para enviar.`);
   msg.channel.send(args.slice(1).join(' '))
 
 
