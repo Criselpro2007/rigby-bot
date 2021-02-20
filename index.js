@@ -29,7 +29,6 @@ client.once('ready', () => {
 });
 
 //Aquí irán tus scripts
-var help = 'ayuda'
 ///////JUEGOS///////
 
 ///////PIEDRA, PAPEL O TIJERA///////
@@ -247,23 +246,6 @@ client.on("message", async message => {
         .addField('r!dado', 'Este comando te da resultados al azar de un dado común')
         .addField('r!8ball', 'Este comando te da unos resultados parecidos a una bola 8 :8ball:')
         .addField('r!tragamonedas', 'Este comando te da  resultados parecidos a una máquina tragamonedas')
-        .setColor('#936841')
-        .setFooter('Rigby Bot')
-        
-        message.channel.send(embed);
-        return
-
-//Help ayuda
-      }if (command === help) {
-        const embed = new Discord.MessageEmbed()
-
-        .setAuthor('Página Ayuda (3 comandos)')
-        .setTitle('Ayuda')
-        .setDescription('Comandos de ayuda')
-        .setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
-        .addField('r!help o r!ayuda', 'Te muestra en lo máximo que te puede ayudar ese comando')
-        .addField('r!invite', 'Te muestra un mensaje donde hay una invitación para invitarme a tu servidor')
-        .addField('r!server', 'Te enseña la información de el servidor en el que pongas este comando')
         .setColor('#936841')
         .setFooter('Rigby Bot')
         
