@@ -234,238 +234,199 @@ client.on("message", async message => {
         message.channel.send(embed);
         return
 
+//Ppt
+      }if (command === 'ppt') {
+
+        const embed = new Discord.MessageEmbed()
+
+        .setAuthor('Rigby Bot')
+        .setTitle(':joystick: | Piedra, papel o tijera')
+        .setDescription('Elige entre piedra, papel o tijera usando los comandos:  `r!piedra`, `r!papel` o `r!tijera`')
+        .setColor('#31ff00')
+        .setFooter(':video_game: Juegos')
+        
+        message.channel.send(embed);
+        return
+
+//Server
+      }if (command === 'server') {
+        var server = message.guild;
+
+        const embed = new Discord.MessageEmbed()
+        .setThumbnail(server.iconURL())
+        .setAuthor(server.name, server.iconURL())
+        .addField('ID', server.id, true)
+        .addField('Region', server.region, true)
+        .addField('Creado el', server.joinedAt.toDateString(), true)
+        .addField('Dueño del Servidor', server.owner.user.tag+' ('+server.owner.user.id +')', true)
+        .addField('Miembros', server.memberCount, true)
+        .addField('Roles', server.roles.size, true)
+        .setColor(0x66b3ff)
+        
+        message.channel.send(embed); 
+        return
+
+/////MODERACIÓN
+//Ban
+      }if (command === 'ban') {
+        if (!message.guild.me.permissions.has('BAN_MEMBERS')) {
+                  return message.channel.send('No tengo permisos para banear gente')
+                }
+                
+                if (!message.member.permissions.has('BAN_MEMBERS')) {
+                  return message.channel.send('No puedes banear gente')
+                }
+                
+                let persona = message.mentions.members.first() || 
+                  message.guild.members.resolve(args[0])
+                
+                if (!persona) {
+                  return message.reply('Debes mencionar a alguien para banear')
+                } else if(!persona.bannable){
+                  return message.channel.send('No puedo banear a esta persona')
+                }else if (persona.roles.highest.comparePositionTo(message.member.roles.highest) > 0) {
+                  return message.channel.send('Esta persona esta en el mismo o mayor rol o nivel que tú, no puedes banearlo')
+                }
+                
+                var razon = args.slice(1).join(' ')
+                if (!razon) {
+                  razon = 'Razon no especificada'
+                }
+                
+                razon += `, Baneado por ${message.author.tag}`
+                
+                message.guild.members.ban(persona, {
+                  reason: razon
+                })
+                  .catch(e => message.reply('Ocurrio un **error** desconocido'))
+                  .then(() => {
+                    message.channel.send(`Listo, **${persona.user.tag}** ha sido baneado`)
+                    return
+                  })     
+                
+//Kick
+      }if (command === 'kick'){
+
+        let user = message.mentions.users.first();
+        let razon = args.slice(1).join(' ');
+    
+        var perms = message.member.hasPermission("KICK_MEMBERS");
+    
+      if(!perms) return message.channel.send("`Error` `|` No tienes permiso para usar este comando.");
+      if (message.mentions.users.size < 1) return message.reply('Debe mencionar a alguien.');
+    
+      if (!razon) return message.channel.send('Escribe una razón, `r!kick @username [razón]`');
+      if (!message.guild.member(user).kickable) return message.reply('No puedo kickear al usuario mencionado.');
+            
+      message.guild.member(user).kick(razon);
+      message.channel.send(`**${user.username}**, fue kickeado del servidor, razón: ${razon}.`);
+      return
+
+/////INTERACCIÓN
+//Golpe mortal
+      }if (command === 'golpe') {
+        let img = message.mentions.users.first();
+
+
+        let gif = [
+          
+        "https://thumbs.gfycat.com/SoulfulLeftEel-size_restricted.gif",
+        "https://images-ext-1.discordapp.net/external/F1RHUV2thnGY47Wqibq-0ZX1MxB7KvM0WsmWsjEWs8w/https/comicvine1.cbsistatic.com/uploads/original/11117/111173561/5635869-1188145255-56358.gif?width=400&height=225",
+        "https://images-ext-1.discordapp.net/external/ehDxnPGeOiqroj5_ws7dYJGSLkGxgMQUR1jhdNCjZf8/https/data.whicdn.com/images/28620053/original.gif?width=400&height=224",      
+          
+        ];
+        
+        if(!message.mentions.users.first()) return message.channel.send(`${message.author.username} Debes mencionar a alguien para golpear viejo`)
+        
+        const embed = new Discord.MessageEmbed()
+        
+        .setTitle(`${message.author.username} le dió un golpe mortal a ${img.username}`)
+        .setColor('RANDOM')
+        .setImage( gif[Math.floor(Math.random() * gif.length)] )
+        .setFooter('Rigby Bot');
+        
+         message.channel.send(embed);
+         return
+
+//Bloqueo mortal
+      }if (command === 'bloqueo') {
+        let img = message.mentions.users.first();
+
+
+        let gif = [
+          
+        "https://images-ext-1.discordapp.net/external/BG_XedCKnMoyCgZ8OsNrCmGIKBllq2MTvk63-5wu8CE/https/img.fireden.net/co/image/1458/68/1458687566497.gif?width=400&height=225",
+        "https://images-ext-2.discordapp.net/external/Rp3Na88RuXmuDq_jXP4M_1BuFNNTMSUEAfR7XXpk2nY/https/static3.comicvine.com/uploads/original/11117/111173561/5635886-1153434774-56358.gif?width=400&height=225",   
+          
+        ];
+        
+        if(!message.mentions.users.first()) return message.channel.send(`${message.author.username} Debes mencionar a alguien para bloquear su golpe`)
+        
+        const embed = new Discord.MessageEmbed()
+        
+        .setTitle(`${message.author.username} bloqueó el golpe de ${img.username}`)
+        .setColor('RANDOM')
+        .setImage( gif[Math.floor(Math.random() * gif.length)] )
+        .setFooter('Rigby Bot');
+        
+         message.channel.send(embed);
+         return
+
+//Control
+      }if (command === 'control') {
+        let img = message.mentions.users.first();
+
+
+        let gif = [
+          
+        "https://media1.tenor.com/images/09a9c921041462e06b8a8f396e0e7d56/tenor.gif?itemid=4849921",
+        "https://vignette.wikia.nocookie.net/regularshow/images/9/94/RIGBYYMORDECAIEN_EL_PODER.gif/revision/latest?cb=20121229221739&path-prefix=es",
+        "https://k43.kn3.net/taringa/2/2/1/6/6/7/78/uncorazonvolador/B75.gif",
+        "https://i.pinimg.com/originals/8f/3c/40/8f3c405173c7703e30350f6083ed7215.gif",
+        "https://64.media.tumblr.com/tumblr_ll8v2hW3JC1qc7bqwo1_400.gifv",
+        "https://media.tumblr.com/tumblr_lsdaefk9oN1qmo0bao1_500.gif",
+        "https://thumbs.gfycat.com/UniqueHeartyLarva-size_restricted.gif",
+        "https://24.media.tumblr.com/tumblr_lvm07xk72V1r2sm3jo1_500.gif",
+        "https://64.media.tumblr.com/18a4dc0432f4d48c0b9cca8256cb9ed5/tumblr_ovv4d5kVf21v4j5emo1_540.gifv",      
+          
+        ];
+        
+        if(!message.mentions.users.first()) return message.channel.send(`${message.author.username} Debes mencionar a alguien para poder controlarlo y que haga lo que quieras hermano :woozy_face:`)
+        
+        const embed = new Discord.MessageEmbed()
+        
+        .setTitle(`${message.author.username} está controlando a ${img.username}`)
+        .setColor('RANDOM')
+        .setImage( gif[Math.floor(Math.random() * gif.length)] )
+        .setFooter('Rigby Bot');
+        
+         message.channel.send(embed);
+         return
+
+//Salto mortal
+      }if (command === 'salto') {
+
+        let gif = [
+          
+        "https://images-ext-1.discordapp.net/external/4goq5zVNkmQU5-6igDbNpMkqL-CV1IBXnMNQ1YKcblA/https/static3.comicvine.com/uploads/original/11117/111173561/5638413-6111180073-14839.gif?width=400&height=225",
+        "https://images-ext-1.discordapp.net/external/OCGMlWMhEYAsolH6j1fgeYK5f3FZT0GcGhZguPRvM3k/https/comicvine1.cbsistatic.com/uploads/original/11117/111173561/5635915-8487668226-14838.gif?width=400&height=225",
+        "https://images-ext-1.discordapp.net/external/EmqEis9Bed-ObQRmGtv-QE4vQ35yJaKGxP2hv45C5Vc/https/static.comicvine.com/uploads/original/11117/111173561/5638415-3224543453-14839.gif?width=400&height=225",   
+          
+        ];
+        
+        
+        const embed = new Discord.MessageEmbed()
+        
+        .setTitle(`${message.author.username} dió un salto mortal`)
+        .setColor('RANDOM')
+        .setImage( gif[Math.floor(Math.random() * gif.length)] )
+        .setFooter('Rigby Bot');
+        
+         message.channel.send(embed);
+         return
       }
       }
   });
-
-///PPT///
-client.on('message', msg => {
-if (msg.author.bot) return;
-if (msg.content.startsWith(prefix + 'ppt')) {
-
-const embed = new Discord.MessageEmbed()
-
-.setAuthor('Rigby Bot')
-.setTitle(':joystick: | Piedra, papel o tijera')
-.setDescription('Elige entre piedra, papel o tijera usando los comandos:  `r!piedra`, `r!papel` o `r!tijera`')
-.setColor('#31ff00')
-.setFooter(':video_game: Juegos')
-
-msg.channel.send(embed);
-}
-});
-
-//Server
-client.on('message', message => {
-if(message.author.bot) return;
-if(message.content.startsWith(prefix + 'server')) {
-var server = message.guild;
-
-const embed = new Discord.MessageEmbed()
-.setThumbnail(server.iconURL())
-.setAuthor(server.name, server.iconURL())
-.addField('ID', server.id, true)
-.addField('Region', server.region, true)
-.addField('Creado el', server.joinedAt.toDateString(), true)
-.addField('Dueño del Servidor', server.owner.user.tag+' ('+server.owner.user.id +')', true)
-.addField('Miembros', server.memberCount, true)
-.addField('Roles', server.roles.size, true)
-.setColor(0x66b3ff)
-
-message.channel.send(embed); 
-}
-});
-
-///////MODERACIÓN
-client.on("message", message => {
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-
-  if(message.content.startsWith(prefix)) {
-    //Ban
-if (command === 'ban') {
-
-  if (!message.guild.me.permissions.has('BAN_MEMBERS')) {
-            return message.channel.send('No tengo permisos para banear gente')
-          }
-          
-          if (!message.member.permissions.has('BAN_MEMBERS')) {
-            return message.channel.send('No puedes banear gente')
-          }
-          
-          let persona = message.mentions.members.first() || 
-            message.guild.members.resolve(args[0])
-          
-          if (!persona) {
-            return message.reply('Debes mencionar a alguien para banear')
-          } else if(!persona.bannable){
-            return message.channel.send('No puedo banear a esta persona')
-          }else if (persona.roles.highest.comparePositionTo(message.member.roles.highest) > 0) {
-            return message.channel.send('Esta persona esta en el mismo o mayor rol o nivel que tú, no puedes banearlo')
-          }
-          
-          var razon = args.slice(1).join(' ')
-          if (!razon) {
-            razon = 'Razon no especificada'
-          }
-          
-          razon += `, Baneado por ${message.author.tag}`
-          
-          message.guild.members.ban(persona, {
-            reason: razon
-          })
-            .catch(e => message.reply('Ocurrio un **error** desconocido'))
-            .then(() => {
-              message.channel.send(`Listo, **${persona.user.tag}** ha sido baneado`)
-              return
-            })
-//Kick
-    }else if (command === 'kick') {
-
-      let user = message.mentions.users.first();
-    let razon = args.slice(1).join(' ');
-
-    var perms = message.member.hasPermission("KICK_MEMBERS");
-
-  if(!perms) return message.channel.send("`Error` `|` No tienes permiso para usar este comando.");
-  if (message.mentions.users.size < 1) return message.reply('Debe mencionar a alguien.');
-
-  if (!razon) return message.channel.send('Escribe una razón, `r!kick @username [razón]`');
-  if (!message.guild.member(user).kickable) return message.reply('No puedo kickear al usuario mencionado.');
-        
-  message.guild.member(user).kick(razon);
-  message.channel.send(`**${user.username}**, fue kickeado del servidor, razón: ${razon}.`);
-  return
-    }
-    }
-});
-
-///////INTERACCIÓN///////
-
-///GOLPE MORTAL///
-client.on("message", msg => {
-if (!msg.content.startsWith(prefix)) return;
-if (msg.author.bot) return;
-if (msg.content.startsWith(prefix + 'golpe')) {
-let img = msg.mentions.users.first();
-
-
-let gif = [
-  
-"https://thumbs.gfycat.com/SoulfulLeftEel-size_restricted.gif",
-"https://images-ext-1.discordapp.net/external/F1RHUV2thnGY47Wqibq-0ZX1MxB7KvM0WsmWsjEWs8w/https/comicvine1.cbsistatic.com/uploads/original/11117/111173561/5635869-1188145255-56358.gif?width=400&height=225",
-"https://images-ext-1.discordapp.net/external/ehDxnPGeOiqroj5_ws7dYJGSLkGxgMQUR1jhdNCjZf8/https/data.whicdn.com/images/28620053/original.gif?width=400&height=224",      
-  
-];
-
-if(!msg.mentions.users.first()) return msg.channel.send(`${msg.author.username} Debes mencionar a alguien para golpear viejo`)
-
-const embed = new Discord.MessageEmbed()
-
-.setTitle(`${msg.author.username} le dió un golpe mortal a ${img.username}`)
-.setColor('RANDOM')
-.setImage( gif[Math.floor(Math.random() * gif.length)] )
-.setFooter('Rigby Bot');
-
- msg.channel.send(embed);
-
-}
-});
-
-///BLOQUEO MORTAL///
-client.on("message", msg => {
-if (!msg.content.startsWith(prefix)) return;
-if (msg.author.bot) return;
-if (msg.content.startsWith(prefix + 'bloqueo')) {
-let img = msg.mentions.users.first();
-
-
-let gif = [
-  
-"https://images-ext-1.discordapp.net/external/BG_XedCKnMoyCgZ8OsNrCmGIKBllq2MTvk63-5wu8CE/https/img.fireden.net/co/image/1458/68/1458687566497.gif?width=400&height=225",
-"https://images-ext-2.discordapp.net/external/Rp3Na88RuXmuDq_jXP4M_1BuFNNTMSUEAfR7XXpk2nY/https/static3.comicvine.com/uploads/original/11117/111173561/5635886-1153434774-56358.gif?width=400&height=225",   
-  
-];
-
-if(!msg.mentions.users.first()) return msg.channel.send(`${msg.author.username} Debes mencionar a alguien para bloquear su golpe`)
-
-const embed = new Discord.MessageEmbed()
-
-.setTitle(`${msg.author.username} bloqueó el golpe de ${img.username}`)
-.setColor('RANDOM')
-.setImage( gif[Math.floor(Math.random() * gif.length)] )
-.setFooter('Rigby Bot');
-
- msg.channel.send(embed);
-
-}
-});
-
-//Control
-client.on("message", msg => {
-if (!msg.content.startsWith(prefix)) return;
-if (msg.author.bot) return;
-if (msg.content.startsWith(prefix + 'control')) {
-let img = msg.mentions.users.first();
-
-
-let gif = [
-  
-"https://media1.tenor.com/images/09a9c921041462e06b8a8f396e0e7d56/tenor.gif?itemid=4849921",
-"https://vignette.wikia.nocookie.net/regularshow/images/9/94/RIGBYYMORDECAIEN_EL_PODER.gif/revision/latest?cb=20121229221739&path-prefix=es",
-"https://k43.kn3.net/taringa/2/2/1/6/6/7/78/uncorazonvolador/B75.gif",
-"https://i.pinimg.com/originals/8f/3c/40/8f3c405173c7703e30350f6083ed7215.gif",
-"https://64.media.tumblr.com/tumblr_ll8v2hW3JC1qc7bqwo1_400.gifv",
-"https://media.tumblr.com/tumblr_lsdaefk9oN1qmo0bao1_500.gif",
-"https://thumbs.gfycat.com/UniqueHeartyLarva-size_restricted.gif",
-"https://24.media.tumblr.com/tumblr_lvm07xk72V1r2sm3jo1_500.gif",
-"https://64.media.tumblr.com/18a4dc0432f4d48c0b9cca8256cb9ed5/tumblr_ovv4d5kVf21v4j5emo1_540.gifv",      
-  
-];
-
-if(!msg.mentions.users.first()) return msg.channel.send(`${msg.author.username} Debes mencionar a alguien para poder controlarlo y que haga lo que quieras hermano :woozy_face:`)
-
-const embed = new Discord.MessageEmbed()
-
-.setTitle(`${msg.author.username} está controlando a ${img.username}`)
-.setColor('RANDOM')
-.setImage( gif[Math.floor(Math.random() * gif.length)] )
-.setFooter('Rigby Bot');
-
- msg.channel.send(embed);
-
-}
-});
-
-///SALTO MORTAL///
-client.on("message", msg => {
-if (!msg.content.startsWith(prefix)) return;
-if (msg.author.bot) return;
-if (msg.content.startsWith(prefix + 'salto')) {
-let img = msg.mentions.users.first();
-
-
-let gif = [
-  
-"https://images-ext-1.discordapp.net/external/4goq5zVNkmQU5-6igDbNpMkqL-CV1IBXnMNQ1YKcblA/https/static3.comicvine.com/uploads/original/11117/111173561/5638413-6111180073-14839.gif?width=400&height=225",
-"https://images-ext-1.discordapp.net/external/OCGMlWMhEYAsolH6j1fgeYK5f3FZT0GcGhZguPRvM3k/https/comicvine1.cbsistatic.com/uploads/original/11117/111173561/5635915-8487668226-14838.gif?width=400&height=225",
-"https://images-ext-1.discordapp.net/external/EmqEis9Bed-ObQRmGtv-QE4vQ35yJaKGxP2hv45C5Vc/https/static.comicvine.com/uploads/original/11117/111173561/5638415-3224543453-14839.gif?width=400&height=225",   
-  
-];
-
-
-const embed = new Discord.MessageEmbed()
-
-.setTitle(`${msg.author.username} dió un salto mortal`)
-.setColor('RANDOM')
-.setImage( gif[Math.floor(Math.random() * gif.length)] )
-.setFooter('Rigby Bot');
-
- msg.channel.send(embed);
-
-}
-});
-
 
 ///FELIZ///
 client.on("message", msg => {
