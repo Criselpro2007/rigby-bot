@@ -209,7 +209,7 @@ client.on("message", async message => {
         .addField(':bust_in_silhouette: | Servidor de soporte', '[Click aquí para entrar](https://discord.gg/8Y7NJvV)')
         .addField(':earth_americas: | Servidor de mi creador', '[Click aquí para entrar](https://discord.gg/3uC72ra)')
         .addField(':exclamation: | Comandos', 'Usa el comando `r!comandos`')
-        .addField(':envelope_with_arrow: | Invítame a tu server', '[Click aquí para invitarme](https://discord.com/api/oauth2/authorize?client_id=760894235363901493&permissions=8&scope=bot)')
+        .addField(':envelope_with_arrow: | Invítame a tu server', '[Link directo click aquí](https://discord.com/api/oauth2/authorize?client_id=760894235363901493&permissions=8&scope=bot) / [Disforge](https://disforge.com/bot/861-rigby-bot) / [Top.gg](https://top.gg/bot/760894235363901493)')
         .setColor('#00ffe9')
         .setFooter('Rigby Bot')
       
