@@ -112,7 +112,7 @@ client.on("message", async message => {
           ':neutral_face: | No es ni bueno ni malo, pero **pescaste un resfriado** jajaja',
           ':white_check_mark: | Bien hecho, **pescaste un reloj de oro** :hand_splayed::alarm_clock:',
           ':x: | Empieza a correr, porque **pecaste un tiburón** :shark:',
-          ':white_check_mark: | Que buena suerte amig, **pescaste una consola de videojuagos :video_game: y entonces, ¿puedo ir a tu casa a jugar?',
+          ':white_check_mark: | Que buena suerte amigo, **pescaste una consola de videojuagos** :video_game: y entonces, ¿puedo ir a tu casa a jugar?',
           ':x: | Que mal, **pescaste un puerta** :door:',
           
         ];
