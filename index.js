@@ -692,9 +692,6 @@ if(msg.content.startsWith(prefix + 'say')) {
 
   if(!args) return msg.channel.send(`Debes escribir un mensaje para enviar.`);
   msg.channel.send(args.slice(1).join(' '))
-
-//Servers en los que rigby está
-client.guilds.cache.map(x => console.log(x.name + x.id)).join("\n")
 }
 });
 
