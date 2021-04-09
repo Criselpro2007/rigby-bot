@@ -384,11 +384,12 @@ client.on("message", async message => {
         "https://vignette.wikia.nocookie.net/regularshow/images/9/94/RIGBYYMORDECAIEN_EL_PODER.gif/revision/latest?cb=20121229221739&path-prefix=es",
         "https://k43.kn3.net/taringa/2/2/1/6/6/7/78/uncorazonvolador/B75.gif",
         "https://i.pinimg.com/originals/8f/3c/40/8f3c405173c7703e30350f6083ed7215.gif",
-        "https://64.media.tumblr.com/tumblr_ll8v2hW3JC1qc7bqwo1_400.gifv",
+        "https://media1.tenor.com/images/8b6ed3776eca10b2173a6a216dd3c7d2/tenor.gif?itemid=5179432",
         "https://media.tumblr.com/tumblr_lsdaefk9oN1qmo0bao1_500.gif",
         "https://thumbs.gfycat.com/UniqueHeartyLarva-size_restricted.gif",
         "https://24.media.tumblr.com/tumblr_lvm07xk72V1r2sm3jo1_500.gif",
-        "https://64.media.tumblr.com/18a4dc0432f4d48c0b9cca8256cb9ed5/tumblr_ovv4d5kVf21v4j5emo1_540.gifv",      
+        "https://64.media.tumblr.com/18a4dc0432f4d48c0b9cca8256cb9ed5/tumblr_ovv4d5kVf21v4j5emo1_540.gif",
+        "https://64.media.tumblr.com/tumblr_ll8v2hW3JC1qc7bqwo1_400.gif",      
           
         ];
         
@@ -444,15 +445,14 @@ client.on("message", async message => {
           "https://media3.giphy.com/media/124Tqt4CuS4vHq/giphy.gif",
           "https://thumbs.gfycat.com/DelectableScaredHorseshoecrab-max-1mb.gif",
           "https://static.wixstatic.com/media/705c45_b9aa4eb26adb4d74a58ab622e10e2554~mv2.gif",
-          "https://64.media.tumblr.com/tumblr_m7udv1I8pL1ru3xuao1_500.gifv",
+          "https://64.media.tumblr.com/tumblr_m7udv1I8pL1ru3xuao1_500.gif",
           "https://24.media.tumblr.com/tumblr_m7bqdaYVgj1qh8rq6o1_500.gif",
           "https://66.media.tumblr.com/ec6c31d3e3a34a2bd69f0395461d6e9c/tumblr_o9xg6k7F1j1so18vqo1_500.gif",
-          "https://steamuserimages-a.akamaihd.net/ugc/621843973302773223/C545A2526CE0DD58A87BD3A55FE6F58F6F5A4DF9/",
           "https://49.media.tumblr.com/466c4614e2ef6d0ff7f4d6dc22c28b40/tumblr_n1482n3XMa1tt179go1_500.gif",
           "https://67.media.tumblr.com/671e9956004c91525d86e28b7ae53690/tumblr_o6o6yqH8hg1sxhdxso1_500.gif",
           "https://i.pinimg.com/originals/94/0d/ab/940dab7c7fbb43711f6216aada4ae5c7.gif",
-          "https://64.media.tumblr.com/f7a4a2a13a306cf097d4a37cdb72788d/fac217726930bd35-7e/s500x750/d784214f93550123fe35076464e4dd952d5907f6.gifv",
-          "https://64.media.tumblr.com/1d3e685a2a48ee1898d9e5ce739054d6/tumblr_ok1kqdxezM1so18vqo5_500.gifv",
+          "https://64.media.tumblr.com/f7a4a2a13a306cf097d4a37cdb72788d/fac217726930bd35-7e/s500x750/d784214f93550123fe35076464e4dd952d5907f6.gif",
+          "https://64.media.tumblr.com/1d3e685a2a48ee1898d9e5ce739054d6/tumblr_ok1kqdxezM1so18vqo5_500.gif",
           
           ];
           
