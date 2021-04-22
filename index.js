@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
-const db = require('megadb')
+const db = require('megadb');
+const got = require('got');
 //Otros npm que vayas a instalar...
 
 const { prefix, versión } = require('./config.json');
@@ -197,6 +198,25 @@ client.on("message", async message => {
   
         message.channel.send(embed);
         return
+      
+      }if (command === 'meme') {
+        const embed = new Discord.MessageEmbed()
+        got('https://www.reddit.com/r/memes/random/.json').then(response => {
+          let content = JSON.parse(response.body);
+          let memeimage = content[0].data.children[0].data.url;
+          let memetitle = content[0].data.children[0].data.title;
+          let memeLikes = content[0].data.children[0].data.ups;
+          
+          embed.setTitle(`${memetitle}`)
+          embed.setImage(memeimage)
+          embed.setColor('RANDOM')
+          embed.setFooter(`:thumbsup: ${memeLikes}`)
+
+          message.channel.send(embed);
+          return
+
+        })
+      
 
 /////COMANDOS DE AYUDA
 //Help
@@ -694,5 +714,6 @@ if(msg.content.startsWith(prefix + 'say')) {
   msg.channel.send(args.slice(1).join(' '))
 }
 });
+
 
 client.login(process.env.token);
