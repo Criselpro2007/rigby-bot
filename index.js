@@ -245,7 +245,7 @@ client.on("message", async message => {
         .setTitle(':exclamation: | Comandos')
         .setDescription('Mis comandos')
         .setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
-        .addField(':video_game: | JUEGOS', '`r!ppt`, `r!pescar`, `r!dado`, `r!8ball`, `r!tragamonedas`')
+        .addField(':video_game: | JUEGOS', '`r!ppt`, `r!pescar`, `r!dado`, `r!8ball`, `r!tragamonedas`, `r!meme`')
         .addField(':smile: | INTERACCIÓN', '`r!golpe <usuario>`, `r!bloqueo <usuario>`, `r!salto`, `r!feliz`, `r!triste`, `r!enojado`, `r!sorprendido`, `r!asustado`, `r!control <usuario>`, `r!celebrar`, `r!bailar`')
         .addField(':hammer: | MODERACIÓN', '`r!ban`, `r!kick`')
         .addField(':envelope: | OTROS', '`r!server`, `r!say`, `r!redes`')
