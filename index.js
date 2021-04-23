@@ -104,17 +104,19 @@ client.on("message", async message => {
 
           ':white_check_mark: | Bien hecho, **pescaste** un :athletic_shoe: la gente bota mucha basura',
           ':x: | Lo lamento pero los **peces se comieron tu carnada**, pero ve el lado positivo, alimentaste a los patitos',
-          ':white_check_mark: | Bien hecho, **pescaste** un :fish: llevatelo a casa y comelo con tu familia o bótalo, a mi me da igual hermano',
+          ':white_check_mark: | Bien hecho, **pescaste un pez** :fish: llevatelo a casa y comelo con tu familia o bótalo, a mi me da igual hermano',
           ':x: | Lo lamento, pero **no pescaste nada**',
-          ':white_check_mark: | Pero que buena suerte, **pescaste un** :gem: ve a comprar la lotería de inmediato',
-          ':x: | Lo lamento si eres menor pero **pescate una botella de champaña** :champagne:',
-          ':white_check_mark: | Bien hecho, **pescaste** una cama grandiosa :bed:',
-          ':x: | O no viejo, **pescaste** una bolsa de compras :shopping_bags:',
+          ':white_check_mark: | Pero que buena suerte, **pescaste un diamante** :gem: ve a comprar la lotería de inmediato',
+          ':x: | Lo lamento si eres menor pero **pescaste una botella de champaña** :champagne:',
+          ':white_check_mark: | Bien hecho, **pescaste una cama grandiosa** :bed:',
+          ':x: | O no viejo, **pescaste una bolsa de compras** :shopping_bags:',
           ':neutral_face: | No es ni bueno ni malo, pero **pescaste un resfriado** jajaja',
-          ':white_check_mark: | Bien hecho, **pescaste un reloj de oro** :hand_splayed::alarm_clock:',
+          ':white_check_mark: | Bien hecho, **pescaste un reloj de oro** :hand_splayed::watch:',
           ':x: | Empieza a correr, porque **pecaste un tiburón** :shark:',
-          ':white_check_mark: | Que buena suerte amigo, **pescaste una consola de videojuagos** :video_game: y entonces, ¿puedo ir a tu casa a jugar?',
+          ':white_check_mark: | Que buena suerte amigo, **pescaste una Playstation 5** :video_game: y entonces, ¿puedo ir a tu casa a jugar?',
           ':x: | Que mal, **pescaste un puerta** :door:',
+          ':white_check_mark: | No me lo creo **pescaste un pc gamer** :desktop::keyboard: te doy $5 por él y me estoy arriesgando',
+          ':x: | ¿Eso es una **tapa del WC**?',
           
         ];
         
