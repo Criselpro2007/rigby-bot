@@ -213,7 +213,7 @@ client.on("message", async message => {
           embed.setTitle(`${memetitle}`)
           embed.setImage(memeimage)
           embed.setColor('RANDOM')
-          embed.setFooter(`👍 ${memeLikes}`)
+          embed.setFooter(`<:Darwin_happy:835165968245981219> ${memeLikes}`)
 
           message.channel.send(embed);
           return
