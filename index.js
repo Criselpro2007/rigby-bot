@@ -201,6 +201,7 @@ client.on("message", async message => {
         message.channel.send(embed);
         return
       
+///Meme
       }if (command === 'meme') {
         const embed = new Discord.MessageEmbed()
         got('https://www.reddit.com/r/memes/random/.json').then(response => {
