@@ -7,6 +7,27 @@ const { prefix, versión } = require('./config.json');
 
 const client = new Discord.Client();
 
+const fs = require('fs') //llamamos a la librería fs, ya viene instalada por defecto
+
+client.commands = new Discord.Collection(); //Creamos la colección de comandos
+
+function cargarComandos(ruta) { //Creamos una función llamada cargarComandos
+  
+  for (const file of fs.readdirSync(ruta, { withFileTypes: true })) { //iniciamos un bucle for of que lea todos los archivos de la carpeta que pongamos al llamar a la función
+
+    if (file.name.endsWith(".js")) { //si el archivo acaba por .js
+      let comando = require(`./${ruta}/${file.name}`); //creamos la variable comando que en su interior tenga la ruta de esa carpeta y el nombre
+      client.commands.set(comando.name, comando); //añadimos a la colección el nombre del comando y la ruta del comando
+
+    } else if (file.isDirectory()) { //si el archivo es una carpeta, va a recurrir, es decir, se va a ejecutar la función dentro de la misma función.
+      cargarComandos(`${ruta}/${file.name}`); //llamamos a la función de la carpeta
+
+    }
+  }
+}
+
+cargarComandos("./commands");
+
 client.once('ready', () => {
     console.log('Estoy en línea');
 });
@@ -29,6 +50,25 @@ client.once('ready', () => {
       
 });
 
+vlient.on("message", message => {
+
+if(!message.guild) return; //Si el mensaje es por MD retornamos
+   if(!message.content.startsWith(prefix) || message.author.bot) return; //si el mensaje no empieza 3 por el prefijo, o el autor es un bot, retornamos
+   if(!message.guild.member(client.user).hasPermission("EMBED_LINKS")) return message.channel.send("No tengo permisos para mandar embeds"); //si el bot no tiene permisos de mandar embeds, enviamos un mensaje de error
+ 
+   const args = message.content.slice(prefix.length).split(/ +/); //definimos args
+   const command = args.shift().toLowerCase(); //definimos command
+
+   if (!client.commands.has(command)) return; //si la colección de comandos que creamos anteriormente no tiene el comando ejecutado, retornamos.
+
+   try {
+     client.commands.get(command).execute(client, message, args); //llamamos a la función que crearemos posteriormente, dentro de ella estará el código del comando
+   } catch (error) {
+     console.error(error); //si hay error, se mostrará en consola
+     message.channel.send("Ha ocurrido un error")
+   }
+
+});
 //Aquí irán tus scripts
 ///////JUEGOS///////
 
@@ -706,17 +746,6 @@ return
       }
   });
 
-//Say
-client.on('message', msg => {
-if(msg.author.bot) return;
-if(msg.content.startsWith(prefix + 'say')) {
-  msg.delete()
-  const args = msg.content.slice(prefix.length).trim().split(/ +/g);
-
-  if(!args) return msg.channel.send(`Debes escribir un mensaje para enviar.`);
-  msg.channel.send(args.slice(1).join(' '))
-}
-});
 
 
 client.login(process.env.token);
