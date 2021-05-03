@@ -7,6 +7,6 @@ module.exports = { //exportamos el nombre, la descripción y la función execute
 
         if(!args) return message.channel.send(`debe escribir un mensaje a enviar.`);
         message.delete();
-        message.channel.send(args.slice(1).join(" ")) //pong!
+        message.channel.send(args.join(" ")) //pong!
     }
 };
