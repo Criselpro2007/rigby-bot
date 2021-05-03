@@ -50,7 +50,7 @@ client.once('ready', () => {
       
 });
 
-vlient.on("message", message => {
+client.on("message", message => {
 
 if(!message.guild) return; //Si el mensaje es por MD retornamos
    if(!message.content.startsWith(prefix) || message.author.bot) return; //si el mensaje no empieza 3 por el prefijo, o el autor es un bot, retornamos
