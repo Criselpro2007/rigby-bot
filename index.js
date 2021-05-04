@@ -67,7 +67,7 @@ if(!message.guild) return; //Si el mensaje es por MD retornamos
      console.error(error); //si hay error, se mostrará en consola
      message.channel.send("Ha ocurrido un error")
    }
-
+client.snipes = new Map()
 });
 //Aquí irán tus scripts
 ///////JUEGOS///////
@@ -367,6 +367,7 @@ client.on("message", async message => {
       message.channel.send(`**${user.username}**, fue kickeado del servidor, razón: ${razon}.`);
       return
 
+      
 /////INTERACCIÓN
 //Golpe mortal
       }if (command === 'golpe') {
@@ -711,7 +712,14 @@ client.on("message", async message => {
       }
       }
   });
-
+//snipe base
+client.on('messageDelete', message =>{
+  client.snipes.set(message.channel.id, {
+    content: message.content,
+    delete: message.author,
+    canal: message.channel
+  })
+})
 
 
 client.login(process.env.token);
