@@ -79,27 +79,7 @@ client.on("message", async message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   if(message.content.startsWith(prefix)) {
-    if (command === 'piedra') {
-      let frase = [
-
-        ':newspaper: | Elijo papel, te gané viejo OOoOOoOo',
-        ':gem: | Elijo roca, empate, odio cuando eso pasa, en especial cuando pasa 100 veces y un monstruo aparece',
-        ':scissors: | Elijo tijeras, noooo perdí, ya te ganaré a la próxima',
-        
-      ];
-      
-      const embed = new Discord.MessageEmbed()
-      
-
-      .setDescription(frase[Math.floor(Math.random() * frase.length)])
-      .setColor('RANDOM')
-      .setFooter('Rigby Bot')
-
-      message.channel.send(embed);
-      return
-
-//PAPEL
-      }else if (command === 'papel') {
+    if (command === 'papel') {
         let frase = [
 
           ':newspaper: | Elijo papel, empate odio cuando eso pasa, en especial cuando pasa 100 veces y un monstruo aparece',
@@ -119,7 +99,7 @@ client.on("message", async message => {
       return  
       
 //Tijera
-      }if (command === 'tijera') {
+      }else if (command === 'tijera') {
         let frase = [
 
           ':newspaper: | Elijo papel, perdí, ya te ganaré a la próxima',
@@ -657,21 +637,6 @@ client.on("message", async message => {
           
            message.channel.send(embed);
            return
-/////MENSAJES
-//Redes
-      }if (command === 'redes') {
-        const embed = new Discord.MessageEmbed()
-
-.setTitle('Redes de mi creador')
-.setDescription('Si quieres apoyarme y a mí creador, siguelo en sus redes y invítame a tu  servidor de  discord')
-.addField("Youtube", "[Cris El Pro](https://www.youtube.com/channel/UC1EUoQeQLqPfoqCb88kKX4Q?view_as=subscriber)", true)
-.addField("Instagram", "[@criselpro_1](https://www.instagram.com/criselpro_1/saved/?hl=es-la)", true)
-.addField("Discord oficial", "[Worldwide VIP Server](https://discord.gg/3uC72ra)")
-.setColor("RANDOM")
-.setFooter("Rigby Bot")
-
-message.channel.send(embed);
-return
       }
       }
   });
