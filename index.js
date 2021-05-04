@@ -79,7 +79,7 @@ client.on("message", async message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   if(message.content.startsWith(prefix)) {
-  if(command === 'papel') {
+  if(command === 'piedra') {
     const embedf = new Discord.MessageEmbed()
           
     
@@ -103,9 +103,9 @@ client.on("message", async message => {
 
   let frase = [
 
-      `${embedf}`,
-      `${embede}`,
-      `${embedw}`,
+    embedf,
+    embede,
+    embedw,
       
     ];
 
