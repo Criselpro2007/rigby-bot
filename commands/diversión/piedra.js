@@ -1,3 +1,4 @@
+const Discord = require('discord.js')
 module.exports = { //exportamos el nombre, la descripción y la función execute
     name: 'piedra', //el nombre del comando
     description: 'piedra', //la descripción (opcional)
@@ -25,9 +26,9 @@ module.exports = { //exportamos el nombre, la descripción y la función execute
 
         let frase = [
 
-            embedf,
-            embede,
-            embedw,
+            `${embedf}`,
+            `${embede}`,
+            `${embedw}`,
             
           ];
     
