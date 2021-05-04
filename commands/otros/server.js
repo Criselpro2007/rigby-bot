@@ -13,7 +13,7 @@ module.exports = { //exportamos el nombre, la descripción y la función execute
         .addField('Creado el', server.joinedAt.toDateString(), true)
         .addField('Dueño del Servidor', server.owner.user.tag+' ('+server.owner.user.id +')', true)
         .addField('Miembros', server.memberCount, true)
-        .addField('Roles', server.roles.size, true)
+        .addField('Roles', server.roles.cache.size, true)
         .setColor('#0x66b3ff')
         
         message.channel.send(embed);
