@@ -65,27 +65,29 @@ const embed1 = new Discord.MessageEmbed()
         .setColor('#00ffe9')
         .setFooter('Rigby Bot')
 
-    message.channel.send(embed1).then(msg =>{
-        msg.react(':video_game:')
-        msg.react(':smile:')
-        msg.react(':hammer:')
-        msg.react(':envelope:')
-        msg.react(':star2:')
+    message.channel.send(embed1).then(msg => {
+
+        msg.react('🎮')
+        msg.react('😄')
+        msg.react('🔨')
+        msg.react('✉️')
+        msg.react('🌟')
+
         msg.awaitReactions((reaction, user) => {
             if(message.author.id !== user.id) return;
-            if(reaction.emoji.name === ':video_game:'){
+            if(reaction.emoji.name === '🎮'){
                 msg.edit(diversión)
             }
-            if(reaction.emoji.name === ':smile:'){
+            if(reaction.emoji.name === '😄'){
                 msg.edit(interacción)
             }
-            if(reaction.emoji.name === ':hammer:'){
+            if(reaction.emoji.name === '🔨'){
                 msg.edit(moderación)
             }
-            if(reaction.emoji.name === ':envelope:'){
+            if(reaction.emoji.name === '✉️'){
                 msg.edit(otros)
             }
-            if(reaction.emoji.name === ':star2:'){
+            if(reaction.emoji.name === '🌟'){
                 msg.edit(principal)
             }
 
