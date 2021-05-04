@@ -79,7 +79,41 @@ client.on("message", async message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   if(message.content.startsWith(prefix)) {
-    if (command === 'papel') {
+  if(command === 'papel') {
+    const embedf = new Discord.MessageEmbed()
+          
+    
+    .setDescription(':newspaper: | Elijo papel, te gané viejo OOoOOoOo')
+    .setColor('RED')
+    .setFooter('Rigby Bot')
+
+    const embede = new Discord.MessageEmbed()
+    
+
+    .setDescription(':gem: | Elijo roca, empate, odio cuando eso pasa, en especial cuando pasa 100 veces y un monstruo aparece')
+    .setColor('YELLOW')
+    .setFooter('Rigby Bot')
+
+    const embedw = new Discord.MessageEmbed()
+    
+
+    .setDescription(':scissors: | Elijo tijeras, noooo perdí, ya te ganaré a la próxima')
+    .setColor('GREEN')
+    .setFooter('Rigby Bot')
+
+  let frase = [
+
+      `${embedf}`,
+      `${embede}`,
+      `${embedw}`,
+      
+    ];
+
+    message.channel.send(frase[Math.floor(Math.random() * frase.length)]);
+    return
+  
+  
+  }if (command === 'papel') {
         let frase = [
 
           ':newspaper: | Elijo papel, empate odio cuando eso pasa, en especial cuando pasa 100 veces y un monstruo aparece',
