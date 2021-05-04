@@ -260,58 +260,6 @@ client.on("message", async message => {
 
         })
       
-
-/////COMANDOS DE AYUDA
-//Help
-      }if (command === 'help'){
-        const embed = new Discord.MessageEmbed()
-
-        .setAuthor('Autor:  Cris El Pro')
-        .setTitle(':grey_question: | Ayuda')
-        .setDescription('Aquí te muestro con lo máximo con lo que te puedo ayudar')
-        .addField(':bust_in_silhouette: | Servidor de soporte', '[Click aquí para entrar](https://discord.gg/8Y7NJvV)')
-        .addField(':earth_americas: | Servidor de mi creador', '[Click aquí para entrar](https://discord.gg/3uC72ra)')
-        .addField(':exclamation: | Comandos', 'Usa el comando `r!comandos`')
-        .addField(':envelope_with_arrow: | Invítame a tu server', '** [Link directo click aquí](https://discord.com/api/oauth2/authorize?client_id=760894235363901493&permissions=8&scope=bot) / [Disforge](https://disforge.com/bot/861-rigby-bot) / [Top.gg](https://top.gg/bot/760894235363901493) o escanea el QR**')
-        .setImage('https://media.discordapp.net/attachments/763157626330152990/820129694879449118/qr-code.png?width=670&height=670')
-        .setColor('#00ffe9')
-        .setFooter('Rigby Bot')
-      
-        message.channel.send(embed);
-        return
-
-//Comandos
-      }if (command === 'comandos') {
-        const embed = new Discord.MessageEmbed()
-
-        .setAuthor('Creador:  Cris El Pro')
-        .setTitle(':exclamation: | Comandos')
-        .setDescription('Mis comandos')
-        .setThumbnail('https://media.discordapp.net/attachments/763157626330152990/775748322430025738/Icono_Normal.png?width=699&height=450')
-        .addField(':video_game: | JUEGOS', '`r!ppt`, `r!pescar`, `r!dado`, `r!8ball`, `r!tragamonedas`, `r!meme`')
-        .addField(':smile: | INTERACCIÓN', '`r!golpe <usuario>`, `r!bloqueo <usuario>`, `r!salto`, `r!feliz`, `r!triste`, `r!enojado`, `r!sorprendido`, `r!asustado`, `r!control <usuario>`, `r!celebrar`, `r!bailar`')
-        .addField(':hammer: | MODERACIÓN', '`r!ban`, `r!kick`')
-        .addField(':envelope: | OTROS', '`r!server`, `r!say`, `r!redes`')
-        .setColor('#00ffe9')
-        .setFooter('Rigby Bot')
-        
-        message.channel.send(embed);
-        return
-
-//Ppt
-      }if (command === 'ppt') {
-
-        const embed = new Discord.MessageEmbed()
-
-        .setAuthor('Rigby Bot')
-        .setTitle(':joystick: | Piedra, papel o tijera')
-        .setDescription('Elige entre piedra, papel o tijera usando los comandos:  `r!piedra`, `r!papel` o `r!tijera`')
-        .setColor('#31ff00')
-        .setFooter(':video_game: Juegos')
-        
-        message.channel.send(embed);
-        return
-
 //Server
       }if (command === 'server') {
         var server = message.guild;
