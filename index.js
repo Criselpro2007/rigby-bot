@@ -722,6 +722,8 @@ client.on('messageDelete', message =>{
 })
 
 client.on('message', message => {
+  if(message.author.bot) return;
+  if(message.content.startsWith(prefix + 'snipe'))
   const channel = message.mentions.channel.first() || message.channel;
 
   const msg = client.snipes.get(channel.id)
@@ -736,7 +738,7 @@ client.on('message', message => {
       .setDescription(msg.content)
       .setColor('RANDOM')
   
-      message.channel.send(embed)
+      message.channel.send(embed);
   }
 });
 
