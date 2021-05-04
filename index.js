@@ -182,18 +182,6 @@ client.on("message", async message => {
 
 //Pescar
       }if (command === 'pescar') {
-        const embedw = new Discord.MessageEmbed()
-        .setTitle('Éxito pescando')
-        .setDescription(frasew[Math.floor(Math.random() * frasew.length)])
-        .setFooter('Rigby Bot')
-        .setColor('GREEN')
-
-        const embedx = new Discord.MessageEmbed()
-        .setTitle('Fallo pescando')
-        .setDescription(frasex[Math.floor(Math.random() * frasex.length)])
-        .setFooter('Rigby Bot')
-        .setColor('RED')
-
         let frasew = [
 
           ':white_check_mark: | Bien hecho, **pescaste** un :athletic_shoe: la gente bota mucha basura',
@@ -214,6 +202,18 @@ client.on("message", async message => {
           ':x: | Que mal, **pescaste un puerta** :door:',
           ':x: | ¿Eso es una **tapa del WC**?',
         ];
+        const embedw = new Discord.MessageEmbed()
+        .setTitle('Éxito pescando')
+        .setDescription(frasew[Math.floor(Math.random() * frasew.length)])
+        .setFooter('Rigby Bot')
+        .setColor('GREEN')
+
+        const embedx = new Discord.MessageEmbed()
+        .setTitle('Fallo pescando')
+        .setDescription(frasex[Math.floor(Math.random() * frasex.length)])
+        .setFooter('Rigby Bot')
+        .setColor('RED')
+
       let frases = [
         embedw,
         embedx,
