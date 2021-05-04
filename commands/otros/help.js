@@ -76,19 +76,15 @@ const embed1 = new Discord.MessageEmbed()
             if(reaction.emoji.name === ':video_game:'){
                 msg.edit(diversión)
             }
-            if(message.author.id !== user.id) return;
             if(reaction.emoji.name === ':smile:'){
                 msg.edit(interacción)
             }
-            if(message.author.id !== user.id) return;
             if(reaction.emoji.name === ':hammer:'){
                 msg.edit(moderación)
             }
-            if(message.author.id !== user.id) return;
             if(reaction.emoji.name === ':envelope:'){
                 msg.edit(otros)
             }
-            if(message.author.id !== user.id) return;
             if(reaction.emoji.name === ':star2:'){
                 msg.edit(principal)
             }
