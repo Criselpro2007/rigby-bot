@@ -25,9 +25,9 @@ module.exports = { //exportamos el nombre, la descripción y la función execute
 
         let frase = [
 
-            `${embedf}`,
-            `${embede}`,
-            `${embedw}`,
+            embedf,
+            embede,
+            embedw,
             
           ];
     
