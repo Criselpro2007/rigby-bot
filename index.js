@@ -112,45 +112,73 @@ client.on("message", async message => {
     message.channel.send(frase[Math.floor(Math.random() * frase.length)]);
     return
   
-  
-  }if (command === 'papel') {
-        let frase = [
-
-          ':newspaper: | Elijo papel, empate odio cuando eso pasa, en especial cuando pasa 100 veces y un monstruo aparece',
-          ':gem: | Elijo roca, noooo perdí, ya te ganaré a la próxima',
-          ':scissors: | Elijo tijeras, te gané viejo OOoOOoOo',
+//papel
+  }else if (command === 'papel') {
+    const embedf = new Discord.MessageEmbed()
           
-        ];
-        
-        const embed = new Discord.MessageEmbed()
-        
-  
-        .setDescription(frase[Math.floor(Math.random() * frase.length)])
-        .setColor('RANDOM')
-        .setFooter('Rigby Bot')
-  
-        message.channel.send(embed);
+    
+    .setDescription(':scissors: | Elijo tijeras, te gané viejo OOoOOoOo')
+    .setColor('RED')
+    .setFooter('Rigby Bot')
+
+    const embede = new Discord.MessageEmbed()
+    
+
+    .setDescription(':newspaper: | Elijo papel, empate odio cuando eso pasa, en especial cuando pasa 100 veces y un monstruo aparece')
+    .setColor('YELLOW')
+    .setFooter('Rigby Bot')
+
+    const embedw = new Discord.MessageEmbed()
+    
+
+    .setDescription(':gem: | Elijo roca, noooo perdí, ya te ganaré a la próxima')
+    .setColor('GREEN')
+    .setFooter('Rigby Bot')
+
+  let frase = [
+
+    embedf,
+    embede,
+    embedw,
+      
+    ];
+
+    message.channel.send(frase[Math.floor(Math.random() * frase.length)]);
       return  
       
 //Tijera
-      }else if (command === 'tijera') {
-        let frase = [
-
-          ':newspaper: | Elijo papel, perdí, ya te ganaré a la próxima',
-          ':gem: | Elijo roca, te gané viejo OOoOOoOo',
-          ':scissors: | Elijo tijeras, empate odio cuando eso pasa, en especial cuando pasa 100 veces y un monstruo aparece',
+      }if (command === 'tijera') {
+        const embedf = new Discord.MessageEmbed()
           
-        ];
-        
-        const embed = new Discord.MessageEmbed()
-        
-  
-        .setDescription(frase[Math.floor(Math.random() * frase.length)])
-        .setColor('RANDOM')
-        .setFooter('Rigby Bot')
-  
-        message.channel.send(embed);
-        return
+    
+    .setDescription(':gem: | Elijo roca, te gané viejo OOoOOoOo')
+    .setColor('RED')
+    .setFooter('Rigby Bot')
+
+    const embede = new Discord.MessageEmbed()
+    
+
+    .setDescription(':scissors: | Elijo tijeras, empate odio cuando eso pasa, en especial cuando pasa 100 veces y un monstruo aparece')
+    .setColor('YELLOW')
+    .setFooter('Rigby Bot')
+
+    const embedw = new Discord.MessageEmbed()
+    
+
+    .setDescription(':newspaper: | Elijo papel, perdí, ya te ganaré a la próxima')
+    .setColor('GREEN')
+    .setFooter('Rigby Bot')
+
+  let frase = [
+
+    embedf,
+    embede,
+    embedw,
+      
+    ];
+
+    message.channel.send(frase[Math.floor(Math.random() * frase.length)]);
+      return
 
 //Pescar
       }if (command === 'pescar') {
