@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "JS",
+    "public": "rigby-bot",
     "ignore": [
       "firebase.json",
       "**/.*",
