@@ -19,5 +19,5 @@ if(!msg){
 
     message.channel.send(embed)
 }
-    }
+}
 };

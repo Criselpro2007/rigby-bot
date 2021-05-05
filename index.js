@@ -50,6 +50,8 @@ client.once('ready', () => {
       
 });
 
+client.snipes = new Map()
+
 client.on("message", message => {
 
 if(!message.guild) return; //Si el mensaje es por MD retornamos
@@ -67,7 +69,7 @@ if(!message.guild) return; //Si el mensaje es por MD retornamos
      console.error(error); //si hay error, se mostrará en consola
      message.channel.send("Ha ocurrido un error")
    }
-client.snipes = new Map()
+
 });
 //Aquí irán tus scripts
 ///////JUEGOS///////
