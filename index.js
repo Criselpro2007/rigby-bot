@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-
+const db = require('megadb')
 const got = require('got');
 require('dotenv/config');
 //Otros npm que vayas a instalar...
@@ -7,30 +7,6 @@ require('dotenv/config');
 const { prefix, versión } = require('./config.json');
 
 const client = new Discord.Client();
-
-
-
-const firebase = require('firebase/app');
-const FieldValue = require('firebase-admin').firestore.FieldValue;
-const admin = require('firebase-admin');
-const serviceAccount = require('./serviceAccount.json');
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-})
-
-let db = admin.firestore();
-
-client.on('guildCreate', async gData => {
-  db.collection('guilds').doc(dData.id).set({
-    'guildID' : gData.id,
-    'guildName' : gData.name,
-    'guildOwner' : gData.owner.user.username,
-    'guildOwnerID'  : gData.owner.id,
-    'guildMemberCount' : gData.memberCount,
-    'prefix' : 'r!'
-  });
-});
 
 const fs = require('fs') //llamamos a la librería fs, ya viene instalada por defecto
 
@@ -741,13 +717,6 @@ client.on("message", async message => {
       }
   });
 
-  client.on('message', message => {
-    if(message.author.bot) return;
-    if(message.content.startsWith('si')){
-
-      message.channel.send('Xd')
-    }
-  });
   
 //snipe base
 client.on('messageDelete', message =>{
