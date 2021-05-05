@@ -3,7 +3,7 @@ module.exports = {
     name: 'snipe', 
     description: 'Comando snipe', 
     execute(client, message, args) { 
-const channel = message.mentions.channel.first() || message.channel;
+const channel = message.mentions.channels.first() || message.channel;
 
 const msg = client.snipes.get(channel.id)
 if(!msg){
