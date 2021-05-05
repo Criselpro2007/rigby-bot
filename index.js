@@ -732,6 +732,15 @@ client.on("message", async message => {
       }
       }
   });
+
+  client.on('message', message => {
+    if(message.author.bot) return;
+    if(message.content.startsWith('si')){
+
+      message.channel.send('Xd')
+    }
+  });
+  
 //snipe base
 client.on('messageDelete', message =>{
   client.snipes.set(message.channel.id, {
