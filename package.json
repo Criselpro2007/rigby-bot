@@ -11,6 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.5.1",
+    "dotenv": "^8.5.1",
+    "firebase": "^8.4.3",
+    "firebase-admin": "^9.7.0",
     "got": "^11.8.2",
     "megadb": "^3.4.0",
     "opusscript": "0.0.7"
