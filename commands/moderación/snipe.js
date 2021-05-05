@@ -12,7 +12,7 @@ if(!msg){
     const embed = new Discord.MessageEmbed()
 
     .setTitle('Snipe')
-    .setAuthor(`Mensaje escrito por: ${msg.delete.tag}`, msg.delte.displayAvatarURL())
+    .setAuthor(`Mensaje escrito por: ${msg.delete.tag}`, msg.delete.displayAvatarURL())
     .addField('Canal', `<#${msg.canal.id}>`)
     .setDescription(msg.content)
     .setColor('RANDOM')
