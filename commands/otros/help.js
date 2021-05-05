@@ -44,6 +44,7 @@ const embed1 = new Discord.MessageEmbed()
     .setDescription('Aquí están mis comandos')
     .addField('r!ban <usuario>', 'Banea a algún usuario mencionándolo')
     .addField('r!kick <usuario>', 'Kickea a algún usuario mencionándolo')
+    .addField('r!warn <usuario>', 'Warnea a algún usuario mencionándolo')
     .setFooter('Rigby Bot')
     .setColor('#00ffe9')
 
