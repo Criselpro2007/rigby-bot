@@ -66,7 +66,8 @@ if(!message.guild) return; //Si el mensaje es por MD retornamos
    try {
      client.commands.get(command).execute(client, message, args); //llamamos a la función que crearemos posteriormente, dentro de ella estará el código del comando
    } catch (error) {
-     console.error(error); //si hay error, se mostrará en consola
+     console.error(error);
+     client.users.cache.get('530051011734274068').send() //si hay error, se mostrará en consola
      message.channel.send("Ha ocurrido un error")
    }
 
