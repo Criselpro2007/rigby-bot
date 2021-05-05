@@ -4,11 +4,11 @@ const got = require('got');
 require('dotenv/config');
 //Otros npm que vayas a instalar...
 
-const { versión } = require('./config.json');
+const { prefix, versión } = require('./config.json');
 
 const client = new Discord.Client();
 
-const TOKEN = ('NzYwODk0MjM1MzYzOTAxNDkz.X3Sr-g.EfppbJ39mN7trhywKUAFX0__DxE');
+
 
 const firebase = require('firebase/app');
 const FieldValue = require('firebase-admin').firestore.FieldValue;
@@ -761,4 +761,4 @@ client.on('messageDelete', message =>{
 
 
 
-client.login(TOKEN);
+client.login(process.env.token);
