@@ -1,10 +1,12 @@
 const Discord = require('discord.js');
-const db = require('megadb')
+const db = require('megadb');
+const randomPuppy = require('random-puppy');
 const got = require('got');
-require('dotenv/config');
 //Otros npm que vayas a instalar...
 
 const { prefix, versión } = require('./config.json');
+
+const { token } = require('./token.env');
 
 const client = new Discord.Client();
 
@@ -29,9 +31,6 @@ function cargarComandos(ruta) { //Creamos una función llamada cargarComandos
 
 cargarComandos("./commands");
 
-client.once('ready', () => {
-    console.log('Estoy en línea');
-});
 
 client.once('ready', () => {
     console.log(client.user.tag + ' cargado y listo viejo!');
@@ -730,4 +729,4 @@ client.on('messageDelete', message =>{
 
 
 
-client.login(process.env.token);
+client.login(token);
